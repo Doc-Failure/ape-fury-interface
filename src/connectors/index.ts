@@ -1,5 +1,5 @@
 import { BscConnector } from '@binance-chain/bsc-connector'
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@doc_failure/sushiswap-sdk'
 import { FortmaticConnector } from './Fortmatic'
 import { InjectedConnector } from '@web3-react/injected-connector'
 import { NetworkConnector } from './NetworkConnector'
@@ -38,6 +38,7 @@ const RPC = {
   [ChainId.CELO]: 'https://forno.celo.org',
   [ChainId.MOONRIVER]: 'https://rpc.moonriver.moonbeam.network',
   [ChainId.TELOS]: 'https://mainnet.telos.net/evm',
+  [ChainId.AURORA_TESTNET]: 'https://testnet.aurora.dev',
 }
 
 export function getNetwork(defaultChainId, urls = RPC) {
@@ -87,6 +88,7 @@ export const injected = new InjectedConnector({
     1285, // moonriver
     122, // fuse
     40, // telos
+    1313161555, // Aurora testnet
   ],
 })
 

@@ -128,7 +128,7 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
     href: null,
     color: '#E8831D',
   },
-  WALLET_CONNECT: {
+  /*  WALLET_CONNECT: {
     connector: walletconnect,
     name: 'WalletConnect',
     iconName: 'wallet-connect.svg',
@@ -233,7 +233,7 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
     description: 'Login using Clover hosted wallet',
     href: null,
     color: '#269964',
-  },
+  }, */
 }
 
 export const NetworkContextName = 'NETWORK'

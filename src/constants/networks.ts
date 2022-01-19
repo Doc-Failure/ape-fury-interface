@@ -1,4 +1,4 @@
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@doc_failure/sushiswap-sdk'
 
 const Arbitrum = 'https://raw.githubusercontent.com/sushiswap/icons/master/network/arbitrum.jpg'
 const Avalanche = 'https://raw.githubusercontent.com/sushiswap/icons/master/network/avalanche.jpg'
@@ -22,6 +22,8 @@ const Moonriver = 'https://raw.githubusercontent.com/sushiswap/icons/master/netw
 const Fuse = 'https://raw.githubusercontent.com/sushiswap/icons/master/token/fuse.jpg'
 const Telos =
   'https://raw.githubusercontent.com/sushiswap/logos/main/network/telos/0xD102cE6A4dB07D247fcc28F366A623Df0938CA9E.jpg'
+const Aurora =
+  'https://raw.githubusercontent.com/aurora-is-near/design-assets/main/token-logo/aurora-avatar-grn%202.png'
 
 export const NETWORK_ICON = {
   [ChainId.MAINNET]: Mainnet,
@@ -52,6 +54,7 @@ export const NETWORK_ICON = {
   [ChainId.MOONRIVER]: Moonriver,
   [ChainId.FUSE]: Fuse,
   [ChainId.TELOS]: Telos,
+  [ChainId.AURORA_TESTNET]: Aurora,
 }
 
 export const NETWORK_LABEL: { [chainId in ChainId]?: string } = {
@@ -83,4 +86,5 @@ export const NETWORK_LABEL: { [chainId in ChainId]?: string } = {
   [ChainId.MOONRIVER]: 'Moonriver',
   [ChainId.FUSE]: 'Fuse',
   [ChainId.TELOS]: 'Telos EVM',
+  [ChainId.AURORA_TESTNET]: 'Aurora Testnet EVM',
 }

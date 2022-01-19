@@ -2,7 +2,7 @@ import { NETWORK_ICON, NETWORK_LABEL } from '../../constants/networks'
 import { useModalOpen, useNetworkModalToggle } from '../../state/application/hooks'
 
 import { ApplicationModal } from '../../state/application/actions'
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@doc_failure/sushiswap-sdk'
 import Image from 'next/image'
 import Modal from '../../components/Modal'
 import ModalHeader from '../../components/ModalHeader'
@@ -23,6 +23,18 @@ export const SUPPORTED_NETWORKS: {
     blockExplorerUrls: string[]
   }
 } = {
+  [ChainId.AURORA_TESTNET]: {
+    chainId: '0x28',
+    chainName: 'Aurora Testnet',
+    nativeCurrency: {
+      name: 'Aurora',
+      symbol: 'AURORA',
+      decimals: 18,
+    },
+    rpcUrls: ['https://testnet.aurora.dev/'],
+    blockExplorerUrls: ['https://explorer.mainnet.aurora.dev/'],
+  },
+  /* 
   [ChainId.MAINNET]: {
     chainId: '0x1',
     chainName: 'Ethereum',
@@ -192,7 +204,7 @@ export const SUPPORTED_NETWORKS: {
     },
     rpcUrls: ['https://palm-mainnet.infura.io/v3/da5fbfafcca14b109e2665290681e267'],
     blockExplorerUrls: ['https://explorer.palm.io'],
-  },
+  }, */
 }
 
 export default function NetworkModal(): JSX.Element | null {
@@ -211,23 +223,7 @@ export default function NetworkModal(): JSX.Element | null {
       </div>
 
       <div className="grid grid-flow-row-dense grid-cols-1 gap-5 overflow-y-auto md:grid-cols-2">
-        {[
-          ChainId.MAINNET,
-          ChainId.MATIC,
-          ChainId.ARBITRUM,
-          ChainId.AVALANCHE,
-          ChainId.MOONRIVER,
-          ChainId.FANTOM,
-          ChainId.BSC,
-          ChainId.XDAI,
-          ChainId.HARMONY,
-          ChainId.TELOS,
-          ChainId.CELO,
-          ChainId.FUSE,
-          ChainId.OKEX,
-          ChainId.HECO,
-          ChainId.PALM,
-        ].map((key: ChainId, i: number) => {
+        {[ChainId.AURORA_TESTNET].map((key: ChainId, i: number) => {
           if (chainId === key) {
             return (
               <button key={i} className="w-full col-span-1 p-px rounded bg-gradient-to-r from-blue to-pink">

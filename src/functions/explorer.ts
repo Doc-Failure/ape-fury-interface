@@ -1,4 +1,4 @@
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@doc_failure/sushiswap-sdk'
 
 // Multichain Explorer
 const builders = {
@@ -211,6 +211,19 @@ const builders = {
         return `${prefix}/${type}/${data}`
     }
   },
+  aurora: (chainName: string, data: string, type: 'transaction' | 'token' | 'address' | 'block') => {
+    const prefix = 'https://explorer.aurora.dev/'
+    switch (type) {
+      case 'transaction':
+        return `${prefix}/txs/${data}`
+      case 'token':
+        return `${prefix}/address/${data}`
+      case 'address':
+        return `${prefix}/address/${data}`
+      default:
+        return `${prefix}/${type}/${data}`
+    }
+  },
 }
 
 interface ChainObject {
@@ -332,6 +345,10 @@ const chains: ChainObject = {
   [ChainId.TELOS]: {
     chainName: '',
     builder: builders.telos,
+  },
+  [ChainId.AURORA_TESTNET]: {
+    chainName: 'Aurora Testnet',
+    builder: builders.aurora,
   },
 }
 

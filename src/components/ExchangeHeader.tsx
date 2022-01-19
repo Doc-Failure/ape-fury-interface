@@ -1,4 +1,4 @@
-import { ChainId, Currency, Percent } from '@sushiswap/sdk'
+import { ChainId, Currency, Percent } from '@doc_failure/sushiswap-sdk'
 import React, { FC, useState } from 'react'
 
 import Gas from './Gas'
