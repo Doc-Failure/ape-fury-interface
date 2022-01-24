@@ -1488,10 +1488,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@doc_failure/sushiswap-sdk@^5.0.0-aurora-network.5":
-  version "5.0.0-aurora-network.5"
-  resolved "https://registry.yarnpkg.com/@doc_failure/sushiswap-sdk/-/sushiswap-sdk-5.0.0-aurora-network.5.tgz#f9dea444307227fab8fc945a7aafbda29cd9a874"
-  integrity sha512-ZP0RJfTWbT4FnbzROM3Cs6vnAWrcvw68Wp3o9zGEyOHxV50IABXUcYN8iNDMQH1y9hDWUAGd9fw7tQf3doD5gQ==
+"@doc_failure/sushiswap-sdk@5.0.0-aurora-network.6":
+  version "5.0.0-aurora-network.6"
+  resolved "https://registry.yarnpkg.com/@doc_failure/sushiswap-sdk/-/sushiswap-sdk-5.0.0-aurora-network.6.tgz#e94e680ddf7324881ff2deb25d9ea1445cf8dc2e"
+  integrity sha512-LXUU5ddIzvOzYey9HySkGqv1TK0rv7mQJYDj+G/QAnjXiYGuVFkDSUmnzMIP/TDiMJAgaoZ0IKJqsKr0zJvSCg==
   dependencies:
     "@ethersproject/abi" "^5.4.0"
     "@ethersproject/abstract-signer" "^5.4.0"
@@ -2813,9 +2813,9 @@
   dependencies:
     "@sushiswap/default-token-list" "^11.3.0"
 
-"@sushiswap/sdk@5.0.0-canary.117":
+"@doc_failure/sushiswap-sdk@5.0.0-canary.117":
   version "5.0.0-canary.117"
-  resolved "https://registry.yarnpkg.com/@sushiswap/sdk/-/sdk-5.0.0-canary.117.tgz#cb171ed04076c82d9722d45b5b0cc4946e35abb3"
+  resolved "https://registry.yarnpkg.com/@doc_failure/sushiswap-sdk/-/sdk-5.0.0-canary.117.tgz#cb171ed04076c82d9722d45b5b0cc4946e35abb3"
   integrity sha512-ZjfhXeL132j7EKOsQSXOKG5sRTHdsnwkvlhcGL2nwf8Td4AmA+8138w/x7V9TAq8HuSyMlzdUP9/3BODtkF6tw==
   dependencies:
     "@ethersproject/abi" "^5.4.0"

@@ -1,5 +1,5 @@
 // a list of tokens by chain
-import { ChainId, Token, WNATIVE } from '@sushiswap/sdk'
+import { Aurora, ChainId, Token, WNATIVE } from '@doc_failure/sushiswap-sdk'
 
 import * as ARBITRUM from './tokens/arbitrum'
 import * as AVALANCHE from './tokens/avalanche'
@@ -16,6 +16,7 @@ import * as OKEX from './tokens/okex'
 import * as PALM from './tokens/palm'
 import * as TELOS from './tokens/telos'
 import * as XDAI from './tokens/xdai'
+import * as AURORA from './tokens/aurora'
 import { SUSHI } from './tokens'
 
 type ChainTokenList = {
@@ -72,6 +73,7 @@ const WRAPPED_NATIVE_ONLY: ChainTokenList = {
   [ChainId.PALM]: [WNATIVE[ChainId.PALM]],
   [ChainId.FUSE]: [WNATIVE[ChainId.FUSE]],
   [ChainId.TELOS]: [WNATIVE[ChainId.TELOS]],
+  [ChainId.AURORA_TESTNET]: [WNATIVE[ChainId.AURORA_TESTNET]],
 }
 
 // used to construct intermediary pairs for trading
@@ -173,6 +175,14 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.PALM]: [...WRAPPED_NATIVE_ONLY[ChainId.PALM], PALM.WETH, PALM.DAI],
   [ChainId.FUSE]: [...WRAPPED_NATIVE_ONLY[ChainId.FUSE], FUSE.USDC, FUSE.USDT, FUSE.WBTC, FUSE.WETH, FUSE.DAI],
   [ChainId.TELOS]: [...WRAPPED_NATIVE_ONLY[ChainId.TELOS], TELOS.USDC, TELOS.USDT, TELOS.WETH, TELOS.WBTC],
+  [ChainId.AURORA_TESTNET]: [
+    ...WRAPPED_NATIVE_ONLY[ChainId.AURORA_TESTNET],
+    AURORA.USDC,
+    AURORA.USDT,
+    AURORA.WBTC,
+    AURORA.MLT,
+    AURORA.NBTC,
+  ],
 }
 
 export const ADDITIONAL_BASES: {
@@ -214,6 +224,10 @@ export const ADDITIONAL_BASES: {
     [MATIC.BCT.address]: [MATIC.KLIMA],
     [MATIC.KLIMA.address]: [MATIC.BCT],
     //[MATIC.DMAGIC.address]: [MATIC.DRAX, MATIC.AXMATIC],
+  },
+  [ChainId.AURORA_TESTNET]: {
+    [AURORA.MLT.address]: [AURORA.MLT],
+    [AURORA.NBTC.address]: [AURORA.NBTC],
   },
 }
 
@@ -380,6 +394,15 @@ export const COMMON_BASES: ChainTokenList = {
     TELOS.USDC,
     TELOS.USDT,
   ],
+  [ChainId.AURORA_TESTNET]: [
+    ...WRAPPED_NATIVE_ONLY[ChainId.AURORA_TESTNET],
+    SUSHI[ChainId.AURORA_TESTNET],
+    AURORA.WBTC,
+    AURORA.USDC,
+    AURORA.USDT,
+    AURORA.MLT,
+    AURORA.NBTC,
+  ],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
@@ -474,6 +497,14 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   [ChainId.PALM]: [...WRAPPED_NATIVE_ONLY[ChainId.PALM], PALM.WETH, PALM.DAI],
   [ChainId.FUSE]: [...WRAPPED_NATIVE_ONLY[ChainId.FUSE], FUSE.USDC, FUSE.USDT, FUSE.WBTC, FUSE.WETH, FUSE.DAI],
   [ChainId.TELOS]: [...WRAPPED_NATIVE_ONLY[ChainId.TELOS], TELOS.USDC, TELOS.USDT, TELOS.WETH, TELOS.WBTC],
+  [ChainId.AURORA_TESTNET]: [
+    ...WRAPPED_NATIVE_ONLY[ChainId.AURORA_TESTNET],
+    AURORA.USDC,
+    AURORA.USDT,
+    AURORA.WBTC,
+    AURORA.MLT,
+    AURORA.NBTC,
+  ],
 }
 
 export const PINNED_PAIRS: {

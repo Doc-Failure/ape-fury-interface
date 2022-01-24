@@ -1,5 +1,5 @@
 import Badge from '../../components/Badge'
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@doc_failure/sushiswap-sdk'
 import NavLink from '../../components/NavLink'
 import React from 'react'
 import { useActiveWeb3React } from '../../hooks'

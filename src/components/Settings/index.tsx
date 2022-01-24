@@ -1,4 +1,4 @@
-import { ChainId, Percent } from '@sushiswap/sdk'
+import { ChainId, Percent } from '@doc_failure/sushiswap-sdk'
 import React, { useRef, useState } from 'react'
 import {
   useExpertModeManager,

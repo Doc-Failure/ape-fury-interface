@@ -1,10 +1,11 @@
-import { ChainId, Currency, WNATIVE } from '@sushiswap/sdk'
+import { ChainId, Currency, WNATIVE } from '@doc_failure/sushiswap-sdk'
 import React, { FunctionComponent, useMemo } from 'react'
 
 import Logo from '../Logo'
 import { WrappedTokenInfo } from '../../state/lists/wrappedTokenInfo'
 import { getMaticTokenLogoURL } from '../../constants/maticTokenMapping'
 import useHttpLocations from '../../hooks/useHttpLocations'
+import { chain } from 'lodash'
 
 export const getTokenLogoURL = (address: string, chainId: ChainId) => {
   let imageURL
@@ -14,8 +15,10 @@ export const getTokenLogoURL = (address: string, chainId: ChainId) => {
     imageURL = `https://v1exchange.pancakeswap.finance/images/coins/${address}.png`
   } else if (chainId === ChainId.MATIC) {
     imageURL = getMaticTokenLogoURL(address)
-  }
-  return imageURL
+  } else return imageURL
+  /* if (chainId === ChainId.AURORA_TESTNET){
+    imageURL = `https://github.com/aurora-is-near/design-assets/blob/main/token-logo/token.png`
+  } */
 }
 
 const BLOCKCHAIN = {
@@ -35,6 +38,7 @@ const BLOCKCHAIN = {
   [ChainId.PALM]: 'palm',
   [ChainId.TELOS]: 'telos',
   [ChainId.XDAI]: 'xdai',
+  [ChainId.AURORA_TESTNET]: 'aurora',
 }
 
 function getCurrencySymbol(currency) {
@@ -56,15 +60,20 @@ function getCurrencySymbol(currency) {
   return currency.symbol.toLowerCase()
 }
 
+//Add aurora logos here
 function getCurrencyLogoUrls(currency) {
   const urls = []
-
   if (currency.chainId in BLOCKCHAIN) {
-    urls.push(
-      `https://raw.githubusercontent.com/sushiswap/logos/main/network/${BLOCKCHAIN[currency.chainId]}/${
-        currency.address
-      }.jpg`
-    )
+    if (currency.chainId === ChainId.AURORA_TESTNET) {
+      const symbol = currency.symbol.toLowerCase()
+      urls.push(`https://raw.githubusercontent.com/aurora-is-near/bridge-assets/master/tokens/${symbol}.svg`)
+    } else {
+      urls.push(
+        `https://raw.githubusercontent.com/sushiswap/logos/main/network/${BLOCKCHAIN[currency.chainId]}/${
+          currency.address
+        }.jpg`
+      )
+    }
     urls.push(
       `https://raw.githubusercontent.com/sushiswap/assets/master/blockchains/${BLOCKCHAIN[currency.chainId]}/assets/${
         currency.address
@@ -97,6 +106,7 @@ const MovrLogo = 'https://raw.githubusercontent.com/sushiswap/icons/master/token
 const FuseLogo = 'https://raw.githubusercontent.com/sushiswap/icons/master/token/fuse.jpg'
 const TelosLogo =
   'https://raw.githubusercontent.com/sushiswap/logos/main/network/telos/0xD102cE6A4dB07D247fcc28F366A623Df0938CA9E.jpg'
+const AuroraLogo = 'https://raw.githubusercontent.com/aurora-is-near/design-assets/main/token-logo/token.png'
 
 const LOGO: { readonly [chainId in ChainId]?: string } = {
   [ChainId.MAINNET]: EthereumLogo,
@@ -124,6 +134,7 @@ const LOGO: { readonly [chainId in ChainId]?: string } = {
   [ChainId.MOONRIVER]: MovrLogo,
   [ChainId.FUSE]: FuseLogo,
   [ChainId.TELOS]: TelosLogo,
+  [ChainId.AURORA_TESTNET]: AuroraLogo,
 }
 
 interface CurrencyLogoProps {

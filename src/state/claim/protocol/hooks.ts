@@ -1,4 +1,4 @@
-import { ChainId, Currency, CurrencyAmount, JSBI, Token } from '@sushiswap/sdk'
+import { ChainId, Currency, CurrencyAmount, JSBI, Token } from '@doc_failure/sushiswap-sdk'
 import { PROTOCOL_MERKLE_ROOT as MERKLE_ROOT, SUSHI } from './../../../constants/index'
 import { getAddress, isAddress } from '@ethersproject/address'
 import { useEffect, useState } from 'react'

@@ -1,4 +1,4 @@
-// import { CurrencyAmount, JSBI, Token } from '@sushiswap/sdk'
+// import { CurrencyAmount, JSBI, Token } from '@doc_failure/sushiswap-sdk'
 
 // import { t } from '@lingui/macro'
 // import { tryParseAmount } from '../../functions'

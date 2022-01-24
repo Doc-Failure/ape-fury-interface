@@ -1,4 +1,4 @@
-import { ChainId, CurrencyAmount, Token } from '@sushiswap/sdk'
+import { ChainId, CurrencyAmount, Token } from '@doc_failure/sushiswap-sdk'
 import { BaseStrategyWithBentoBoxTraitHook } from './traits/useBentoBoxTrait'
 import { BaseStrategyWithHasPermitTokenHook } from './traits/useHasPermitTokenTrait'
 import { BaseStrategyHook } from './strategies/useBaseStrategy'

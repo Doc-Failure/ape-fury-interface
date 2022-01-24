@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, JSBI, Percent, Token, TradeType, Trade as V2Trade } from '@sushiswap/sdk'
+import { Currency, CurrencyAmount, JSBI, Percent, Token, TradeType, Trade as V2Trade } from '@doc_failure/sushiswap-sdk'
 import { DAI, SUSHI, USDC } from '../constants/tokens'
 import { useMemo, useState } from 'react'
 

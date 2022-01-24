@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react'
 import { FC } from 'react'
 import { useActiveWeb3React } from '../../hooks'
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@doc_failure/sushiswap-sdk'
 import Button from '../Button'
 import { classNames } from '../../functions'
 import { Transition } from '@headlessui/react'

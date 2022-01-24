@@ -1,7 +1,7 @@
 import { BigNumber, ethers } from 'ethers'
 import { ExchangeRateCheckBox, SwapCheckbox } from './Checkbox'
 import { KashiApproveButton, TokenApproveButton } from './Button'
-import { Percent, SUSHISWAP_MULTISWAPPER_ADDRESS, WNATIVE } from '@sushiswap/sdk'
+import { Percent, SUSHISWAP_MULTISWAPPER_ADDRESS, WNATIVE } from '@doc_failure/sushiswap-sdk'
 import React, { useMemo, useState } from 'react'
 import { Warning, Warnings } from '../../entities/Warnings'
 import { ZERO, e10, maximum, minimum } from '../../functions/math'

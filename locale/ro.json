@@ -291,7 +291,6 @@
   "Slippage tolerance": "Toleranță la derapaj",
   "Slippage tolerance...": "Toleranță la derapaj...",
   "Something went wrong during signing of the approval. This is expected for hardware wallets, such as Trezor and Ledger. Click again and the fallback method will be used": "Ceva nu a funcționat corect în timpul semnării aprobării. Acest lucru este de așteptat pentru portofelele hardware, cum ar fi Trezor și Ledger. Faceți clic din nou și va fi utilizată metoda de rezervă",
-  "Stake": "Investiți",
   "Stake SUSHI": "Investiți SUSHI",
   "Stake SUSHI for xSUSHI and deposit into Aave in one click. xSUSHI in Aave (aXSUSHI) can be lent or used as collateral for borrowing.": "",
   "Stake SUSHI for xSUSHI and deposit into BentoBox in one click. xSUSHI in BentoBox is automatically\ninvested into a passive yield strategy, and can be lent or used as collateral for borrowing in Kashi.": "",

@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Percent } from '@sushiswap/sdk'
+import { ChainId, JSBI, Percent } from '@doc_failure/sushiswap-sdk'
 import { binance, fortmatic, injected, portis, torus, walletconnect, walletlink } from '../connectors'
 
 import { AbstractConnector } from '@web3-react/abstract-connector'
@@ -33,6 +33,7 @@ export const RPC = {
   [ChainId.CELO]: 'https://forno.celo.org',
   [ChainId.MOONRIVER]: 'https://rpc.moonriver.moonbeam.network',
   [ChainId.TELOS]: 'https://mainnet.telos.net/evm',
+  [ChainId.AURORA_TESTNET]: 'https://testnet.aurora.dev',
 }
 
 export const POOL_DENY = ['14', '29', '45', '30']

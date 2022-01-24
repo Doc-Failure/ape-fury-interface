@@ -5,7 +5,7 @@ import { SUSHI, XSUSHI } from '../../constants'
 import TransactionConfirmationModal, { ConfirmationModalContent } from '../../modals/TransactionConfirmationModal'
 
 import Button from '../../components/Button'
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@doc_failure/sushiswap-sdk'
 import Dots from '../../components/Dots'
 import { ethers } from 'ethers'
 import { t } from '@lingui/macro'

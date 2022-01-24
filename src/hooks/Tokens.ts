@@ -1,4 +1,4 @@
-import { ChainId, Currency, NATIVE, Token, WNATIVE, currencyEquals } from '@sushiswap/sdk'
+import { ChainId, Currency, NATIVE, Token, WNATIVE, currencyEquals } from '@doc_failure/sushiswap-sdk'
 import { NEVER_RELOAD, useSingleCallResult } from '../state/multicall/hooks'
 import { TokenAddressMap, useAllLists, useInactiveListUrls, useUnsupportedTokenList } from './../state/lists/hooks'
 import { createTokenFilterFunction, filterTokens } from '../functions/filtering'
@@ -50,6 +50,7 @@ function useTokensFromMap(tokenMap: TokenAddressMap, includeUserAdded: boolean):
 }
 
 export function useAllTokens(): { [address: string]: Token } {
+  console.log('QUI!!!')
   const allTokens = useCombinedActiveList()
   return useTokensFromMap(allTokens, true)
 }

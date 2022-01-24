@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@sushiswap/sdk'
+import { ChainId, Token } from '@doc_failure/sushiswap-sdk'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { formatPercent, maxAmountSpend, tryParseAmount } from '../../../functions'
 import { useAllTokens, useCurrency } from '../../../hooks/Tokens'
@@ -112,6 +112,8 @@ function LimitOrder() {
 
   const handleInputSelect = useCallback(
     (inputCurrency) => {
+      console.log(inputCurrency)
+      console.log('inputCurrency')
       onCurrencySelection(Field.INPUT, inputCurrency)
     },
     [onCurrencySelection]

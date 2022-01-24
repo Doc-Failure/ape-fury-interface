@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 import { useDerivedLimitOrderInfo, useLimitOrderState } from '../../state/limit-order/hooks'
-import { Currency, Price } from '@sushiswap/sdk'
+import { Currency, Price } from '@doc_failure/sushiswap-sdk'
 import { Field } from '../../state/limit-order/actions'
 
 const PriceRatio: FC = () => {

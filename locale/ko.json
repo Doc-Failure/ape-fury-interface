@@ -291,7 +291,6 @@
   "Slippage tolerance": "슬리피지 허용 범위",
   "Slippage tolerance...": "슬리피지 허용 범위",
   "Something went wrong during signing of the approval. This is expected for hardware wallets, such as Trezor and Ledger. Click again and the fallback method will be used": "허가에 서명하는 동안 문제가 발생했습니다. 이는 Trezor 및 Ledger와 같은 하드웨어 지갑에서 발생된 것으로 예상됩니다. 다시 클릭하면 대체 방법이 사용됩니다.",
-  "Stake": "스테이킹",
   "Stake SUSHI": "SUSHI 스테이킹",
   "Stake SUSHI for xSUSHI and deposit into Aave in one click. xSUSHI in Aave (aXSUSHI) can be lent or used as collateral for borrowing.": "",
   "Stake SUSHI for xSUSHI and deposit into BentoBox in one click. xSUSHI in BentoBox is automatically\ninvested into a passive yield strategy, and can be lent or used as collateral for borrowing in Kashi.": "",

@@ -1,7 +1,7 @@
 import { defaultAbiCoder } from '@ethersproject/abi'
 import { e10 } from './math'
 import { AddressZero } from '@ethersproject/constants'
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@doc_failure/sushiswap-sdk'
 import { CHAINLINK_MAPPING } from '../constants/chainlink/mappings'
 
 export function validateChainlinkOracleData(chainId = ChainId.MAINNET, collateral, asset, data) {

@@ -1,4 +1,4 @@
-import { ChainId, Currency, CurrencyAmount, Price, Token, USD } from '@sushiswap/sdk'
+import { ChainId, Currency, CurrencyAmount, Price, Token, USD } from '@doc_failure/sushiswap-sdk'
 
 import { useActiveWeb3React } from '../hooks/useActiveWeb3React'
 import { useMemo } from 'react'

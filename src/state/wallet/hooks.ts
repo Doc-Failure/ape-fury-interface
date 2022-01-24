@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, JSBI, NATIVE, Token } from '@sushiswap/sdk'
+import { Currency, CurrencyAmount, JSBI, NATIVE, Token } from '@doc_failure/sushiswap-sdk'
 import { useMultipleContractSingleData, useSingleContractMultipleData } from '../multicall/hooks'
 
 import ERC20_ABI from '../../constants/abis/erc20.json'

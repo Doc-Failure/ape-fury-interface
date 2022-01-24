@@ -13,7 +13,7 @@ import {
   Trade,
   WNATIVE,
   ZAPPER_ADDRESS,
-} from '@sushiswap/sdk'
+} from '@doc_failure/sushiswap-sdk'
 import Column, { AutoColumn } from '../../components/Column'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { computeRealizedLPFeePercent, warningSeverity } from '../../functions/prices'

@@ -3,7 +3,7 @@ import useSWR, { SWRConfiguration } from 'swr'
 
 import { useActiveWeb3React } from '../../../hooks'
 import { useMemo } from 'react'
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@doc_failure/sushiswap-sdk'
 
 interface useBlockProps {
   timestamp?: number

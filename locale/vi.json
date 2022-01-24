@@ -291,7 +291,6 @@
   "Slippage tolerance": "Khả năng chịu trượt giá",
   "Slippage tolerance...": "Khả năng chịu trượt giá...",
   "Something went wrong during signing of the approval. This is expected for hardware wallets, such as Trezor and Ledger. Click again and the fallback method will be used": "Đã xảy ra sự cố khi ký phê duyệt. Điều này được mong đợi đối với các ví cứng, chẳng hạn như Trezor và Ledger. Nhấp lại và phương pháp dự phòng sẽ được sử dụng",
-  "Stake": "Đặt cược",
   "Stake SUSHI": "Đặt cược SUSHI",
   "Stake SUSHI for xSUSHI and deposit into Aave in one click. xSUSHI in Aave (aXSUSHI) can be lent or used as collateral for borrowing.": "",
   "Stake SUSHI for xSUSHI and deposit into BentoBox in one click. xSUSHI in BentoBox is automatically\ninvested into a passive yield strategy, and can be lent or used as collateral for borrowing in Kashi.": "",

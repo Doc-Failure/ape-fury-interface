@@ -212,7 +212,7 @@ const builders = {
     }
   },
   aurora: (chainName: string, data: string, type: 'transaction' | 'token' | 'address' | 'block') => {
-    const prefix = 'https://explorer.aurora.dev/'
+    const prefix = 'https://explorer.testnet.aurora.dev/'
     switch (type) {
       case 'transaction':
         return `${prefix}/txs/${data}`

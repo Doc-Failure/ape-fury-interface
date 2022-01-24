@@ -4,7 +4,7 @@ import {
   useUserArcherTipManualOverride,
   useUserSlippageTolerance,
 } from '../state/user/hooks'
-import { CurrencyAmount, Ether, ChainId } from '@sushiswap/sdk'
+import { CurrencyAmount, Ether, ChainId } from '@doc_failure/sushiswap-sdk'
 import React from 'react'
 import { RowBetween } from './Row'
 import { StyledSlider } from '../features/swap/styleds'

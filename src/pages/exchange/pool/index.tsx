@@ -1,22 +1,21 @@
-import { ChainId, CurrencyAmount, JSBI, NATIVE, Pair } from '@sushiswap/sdk'
+import { ChainId, CurrencyAmount, JSBI, Pair, Currency, NATIVE } from '@doc_failure/sushiswap-sdk'
 import React, { useMemo } from 'react'
 import { classNames, currencyId } from '../../../functions'
 import { toV2LiquidityToken, useTrackedTokenPairs } from '../../../state/user/hooks'
 
 import Alert from '../../../components/Alert'
-import { BIG_INT_ZERO } from '../../../constants'
+/* import { BIG_INT_ZERO } from '../../../constants' */
 import Back from '../../../components/Back'
 import Button from '../../../components/Button'
-import Card from '../../../components/Card'
+/* import Card from '../../../components/Card' */
 import Container from '../../../components/Container'
-import { Currency } from '@sushiswap/sdk'
 import Dots from '../../../components/Dots'
 import Empty from '../../../components/Empty'
-import ExternalLink from '../../../components/ExternalLink'
+/* import ExternalLink from '../../../components/ExternalLink' */
 import FullPositionCard from '../../../components/PositionCard'
 import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
+/* import Image from 'next/image'
+import Link from 'next/link' */
 import { MigrationSupported } from '../../../features/migration'
 import Typography from '../../../components/Typography'
 import Web3Connect from '../../../components/Web3Connect'
@@ -154,6 +153,7 @@ export default function Pool() {
             </Empty>
           )}
           <div className={classNames('grid gap-4', migrationSupported ? 'grid-cols-3' : 'grid-cols-2')}>
+            {console.log('NATIVE[chainId]: ' + NATIVE[chainId])}
             <Button
               id="add-pool-button"
               color="gradient"

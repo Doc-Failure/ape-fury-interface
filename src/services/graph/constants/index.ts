@@ -1,4 +1,4 @@
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@doc_failure/sushiswap-sdk'
 const THE_GRAPH = 'https://api.thegraph.com'
 
 export const GRAPH_HOST = {

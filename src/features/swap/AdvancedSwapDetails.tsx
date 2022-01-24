@@ -1,9 +1,15 @@
-import { ChainId, Currency, Ether, Percent, TradeType, Trade as V2Trade, CurrencyAmount } from '@sushiswap/sdk'
+import {
+  ChainId,
+  Currency,
+  Ether,
+  Percent,
+  TradeType,
+  Trade as V2Trade,
+  CurrencyAmount,
+} from '@doc_failure/sushiswap-sdk'
 import React, { useMemo } from 'react'
 import { RowBetween, RowFixed } from '../../components/Row'
 
-import { ANALYTICS_URL } from '../../constants'
-import ExternalLink from '../../components/ExternalLink'
 import FormattedPriceImpact from './FormattedPriceImpact'
 import QuestionHelper from '../../components/QuestionHelper'
 import SwapRoute from './SwapRoute'

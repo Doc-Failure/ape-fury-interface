@@ -3,5 +3,6 @@ const normalize = (src) => {
 }
 
 export const cloudinaryLoader = ({ src, width }) => {
-  return `https://res.cloudinary.com/sushi-cdn/image/fetch/w_${width}/${normalize(src)}`
+  //return `https://res.cloudinary.com/sushi-cdn/image/fetch/w_${width}/${normalize(src)}`
+  return src
 }

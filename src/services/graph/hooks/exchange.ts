@@ -30,7 +30,7 @@ import {
 } from '../fetchers'
 import useSWR, { SWRConfiguration } from 'swr'
 
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@doc_failure/sushiswap-sdk'
 import { ethPriceQuery } from '../queries'
 import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
 import { useBlock } from './blocks'

@@ -1,4 +1,4 @@
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@doc_failure/sushiswap-sdk'
 import { ethers } from 'ethers'
 
 type Currency = { address: string; decimals: number }
@@ -48,6 +48,7 @@ export const USD_CURRENCY: { [chainId in ChainId]?: Currency } = {
   [ChainId.ARBITRUM]: { address: '0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8', decimals: 6 },
   // TODO: Update below with new stable once liquidty is sufficient
   [ChainId.AVALANCHE]: { address: '0xde3A24028580884448a5397872046a019649b084', decimals: 6 },
+  [ChainId.AURORA_TESTNET]: { address: '0xb12bfca5a55806aaf64e99521918a4bf0fc40802', decimals: 6 },
 }
 
 export function getCurrency(chainId: ChainId): Currency {

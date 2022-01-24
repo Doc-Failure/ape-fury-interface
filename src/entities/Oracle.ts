@@ -1,4 +1,4 @@
-import { CHAINLINK_ORACLE_ADDRESS, ChainId, Token } from '@sushiswap/sdk'
+import { CHAINLINK_ORACLE_ADDRESS, ChainId, Token } from '@doc_failure/sushiswap-sdk'
 
 import { CHAINLINK_MAPPING } from '../constants/chainlink'
 import { e10 } from '../functions/math'

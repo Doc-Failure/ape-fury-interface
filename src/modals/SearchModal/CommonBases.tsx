@@ -1,4 +1,4 @@
-import { ChainId, Currency, Token, currencyEquals } from '@sushiswap/sdk'
+import { ChainId, Currency, Token, currencyEquals } from '@doc_failure/sushiswap-sdk'
 
 import { AutoColumn } from '../../components/Column'
 import { AutoRow } from '../../components/Row'

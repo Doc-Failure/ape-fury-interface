@@ -23,7 +23,7 @@ import {
   USDC,
   USD,
   ZERO,
-} from '@sushiswap/sdk'
+} from '@doc_failure/sushiswap-sdk'
 import { getAddress } from '@ethersproject/address'
 import { Chef, PairType } from './enum'
 import { OLD_FARMS } from '../../constants/onsen'

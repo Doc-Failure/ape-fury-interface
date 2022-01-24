@@ -1,4 +1,4 @@
-import { ChainId, AddressMap } from '@sushiswap/sdk'
+import { ChainId, AddressMap } from '@doc_failure/sushiswap-sdk'
 
 export enum ONSEN_CATEGORY {
   ALL,

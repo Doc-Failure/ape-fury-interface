@@ -1,12 +1,13 @@
 import ARBITRUM from './arbitrum'
 import AVALANCHE from './avalanche'
 import BSC from './bsc'
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@doc_failure/sushiswap-sdk'
 import HECO from './heco'
 import KOVAN from './kovan'
 import MAINNET from './mainnet'
 import MATIC from './matic'
 import XDAI from './xdai'
+import AURORA from './aurora'
 
 export type ChainlinkMappingList = {
   readonly [address: string]: {

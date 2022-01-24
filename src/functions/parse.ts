@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, JSBI } from '@sushiswap/sdk'
+import { Currency, CurrencyAmount, JSBI } from '@doc_failure/sushiswap-sdk'
 
 import { BigNumber } from '@ethersproject/bignumber'
 import { parseUnits } from '@ethersproject/units'

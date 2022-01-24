@@ -7,7 +7,7 @@ import { useDerivedLimitOrderInfo, useLimitOrderApprovalPending, useLimitOrderSt
 
 import { Field } from '../state/swap/actions'
 import { MaxUint256 } from '@ethersproject/constants'
-import { Token } from '@sushiswap/sdk'
+import { Token } from '@doc_failure/sushiswap-sdk'
 import { ethers } from 'ethers'
 import { useActiveWeb3React } from './useActiveWeb3React'
 import { useBentoMasterContractAllowed } from '../state/bentobox/hooks'

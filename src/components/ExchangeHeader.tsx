@@ -9,7 +9,7 @@ import { t } from '@lingui/macro'
 import { useActiveWeb3React } from '../hooks'
 import { useLingui } from '@lingui/react'
 import { useRouter } from 'next/router'
-import MyOrders from '../features/limit-order/MyOrders'
+/* import MyOrders from '../features/limit-order/MyOrders' */
 
 const getQuery = (input, output) => {
   if (!input && !output) return
@@ -37,7 +37,7 @@ const ExchangeHeader: FC<ExchangeHeaderProps> = ({ input, output, allowedSlippag
 
   return (
     <div className="flex justify-between mb-4 space-x-3 items-center">
-      <div className="grid grid-cols-3 rounded p-3px bg-dark-800 h-[46px]">
+      <div className="grid grid-cols-2 rounded p-3px bg-dark-800 h-[46px]">
         <NavLink
           activeClassName="font-bold border rounded text-high-emphesis border-dark-800 bg-gradient-to-r from-opaque-blue to-opaque-pink hover:from-blue hover:to-pink"
           href={{
@@ -49,7 +49,7 @@ const ExchangeHeader: FC<ExchangeHeaderProps> = ({ input, output, allowedSlippag
             {i18n._(t`Swap`)}
           </a>
         </NavLink>
-        <NavLink
+        {/* <NavLink
           activeClassName="font-bold border rounded text-high-emphesis border-dark-800 bg-gradient-to-r from-opaque-blue to-opaque-pink hover:from-blue hover:to-pink"
           href={{
             pathname: '/limit-order',
@@ -59,7 +59,7 @@ const ExchangeHeader: FC<ExchangeHeaderProps> = ({ input, output, allowedSlippag
           <a className="flex items-center justify-center px-4 text-base font-medium text-center rounded-md text-secondary hover:text-high-emphesis">
             {i18n._(t`Limit`)}
           </a>
-        </NavLink>
+        </NavLink> */}
         <NavLink
           activeClassName="font-bold border rounded text-high-emphesis border-dark-800 bg-gradient-to-r from-opaque-blue to-opaque-pink hover:from-blue hover:to-pink"
           href={`/${!isRemove ? 'add' : 'remove'}${input ? `/${currencyId(input)}` : ''}${
@@ -73,11 +73,11 @@ const ExchangeHeader: FC<ExchangeHeaderProps> = ({ input, output, allowedSlippag
       </div>
       <div className="flex items-center">
         <div className="grid grid-flow-col gap-1">
-          {isLimitOrder && (
+          {/*   {isLimitOrder && (
             <div className="items-center h-full w-full cursor-pointer hover:bg-dark-800 rounded px-3 py-1.5">
               <MyOrders />
             </div>
-          )}
+          )} */}
           {chainId === ChainId.MAINNET && (
             <div className=" text-green text-opacity-80 hover:text-opacity-100 hidden md:flex space-x-3 items-center hover:bg-dark-800 rounded h-full w-full px-3 cursor-pointer">
               <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">

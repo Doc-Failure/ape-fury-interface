@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount } from '@sushiswap/sdk'
+import { Currency, CurrencyAmount } from '@doc_failure/sushiswap-sdk'
 
 import { useActiveWeb3React } from '../hooks/useActiveWeb3React'
 import { useCallback } from 'react'

@@ -1,5 +1,5 @@
 import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallback'
-import { BENTOBOX_ADDRESS, CurrencyAmount, Token, WNATIVE } from '@sushiswap/sdk'
+import { BENTOBOX_ADDRESS, CurrencyAmount, Token, WNATIVE } from '@doc_failure/sushiswap-sdk'
 import { BentoBalance, useBentoBalances } from '../../state/bentobox/hooks'
 import React, { useState } from 'react'
 import { useFuse, useSortableData } from '../../hooks'

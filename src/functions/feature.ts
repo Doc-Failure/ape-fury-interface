@@ -1,4 +1,4 @@
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@doc_failure/sushiswap-sdk'
 
 export enum Feature {
   AMM = 'AMM',
@@ -50,6 +50,7 @@ const features = {
   [ChainId.CELO]: [Feature.AMM, Feature.LIQUIDITY_MINING, Feature.ANALYTICS],
   [ChainId.MOONRIVER]: [Feature.AMM, Feature.LIQUIDITY_MINING, Feature.ANALYTICS],
   [ChainId.ARBITRUM]: [Feature.AMM, Feature.LIQUIDITY_MINING, Feature.ANALYTICS, Feature.BENTOBOX, Feature.KASHI],
+  [ChainId.AURORA_TESTNET]: [Feature.AMM],
 }
 
 export function featureEnabled(feature: Feature, chainId: ChainId): boolean {

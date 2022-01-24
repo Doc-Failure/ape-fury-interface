@@ -1,4 +1,4 @@
-import { ChainId, Currency, NATIVE, Token } from '@sushiswap/sdk'
+import { ChainId, Currency, NATIVE, Token } from '@doc_failure/sushiswap-sdk'
 import React, { KeyboardEvent, RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Row, { RowFixed } from '../../components/Row'
 import { filterTokens, useSortedTokensByQuery } from '../../functions/filtering'
@@ -88,11 +88,15 @@ export function CurrencySearch({
   if (router.asPath.startsWith('/kashi/create')) {
     allTokens = Object.keys(allTokens).reduce((obj, key) => {
       if (CHAINLINK_TOKENS[chainId].find((address) => address === key)) obj[key] = allTokens[key]
+      console.log('obj')
+      console.log(obj)
       return obj
     }, {})
   }
 
   if (currencyList) {
+    console.log('currencyList: ')
+    console.log(currencyList)
     allTokens = Object.keys(allTokens).reduce((obj, key) => {
       if (currencyList.includes(key)) obj[key] = allTokens[key]
       return obj
@@ -108,6 +112,8 @@ export function CurrencySearch({
 
   useEffect(() => {
     if (isAddressSearch) {
+      console.log('isAddressSearch')
+      console.log(isAddressSearch)
       ReactGA.event({
         category: 'Currency Select',
         action: 'Search by address',

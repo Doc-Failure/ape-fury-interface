@@ -1,7 +1,7 @@
 import KashiCooker, { signMasterContractApproval } from '../entities/KashiCooker'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
-import { KASHI_ADDRESS } from '@sushiswap/sdk'
+import { KASHI_ADDRESS } from '@doc_failure/sushiswap-sdk'
 import { ethers } from 'ethers'
 import { setKashiApprovalPending } from '../state/application/actions'
 import { useActiveWeb3React } from '../hooks/useActiveWeb3React'

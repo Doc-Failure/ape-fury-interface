@@ -1,4 +1,4 @@
-import { ChainId, SUSHI_ADDRESS, Token } from '@sushiswap/sdk'
+import { ChainId, SUSHI_ADDRESS, Token } from '@doc_failure/sushiswap-sdk'
 
 type ChainTokenMap = {
   readonly [chainId in ChainId]?: Token
@@ -24,6 +24,13 @@ export const SUSHI: ChainTokenMap = {
   [ChainId.MOONRIVER]: new Token(ChainId.MOONRIVER, SUSHI_ADDRESS[ChainId.MOONRIVER], 18, 'SUSHI', 'SushiToken'),
   [ChainId.TELOS]: new Token(ChainId.TELOS, SUSHI_ADDRESS[ChainId.TELOS], 18, 'SUSHI', 'SushiToken'),
   [ChainId.FUSE]: new Token(ChainId.FUSE, SUSHI_ADDRESS[ChainId.FUSE], 18, 'SUSHI', 'SushiToken'),
+  [ChainId.AURORA_TESTNET]: new Token(
+    ChainId.AURORA_TESTNET,
+    SUSHI_ADDRESS[ChainId.AURORA_TESTNET],
+    18,
+    'SUSHI',
+    'SushiToken'
+  ),
 }
 
 export const XSUSHI = new Token(ChainId.MAINNET, '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272', 18, 'xSUSHI', 'SushiBar')

@@ -1,14 +1,15 @@
 import { ARCHER_RELAY_URI, INITIAL_ALLOWED_SLIPPAGE } from '../../../constants'
+
 import {
-  ARCHER_ROUTER_ADDRESS,
-  ChainId,
   Currency,
   CurrencyAmount,
+  ARCHER_ROUTER_ADDRESS,
+  ChainId,
   JSBI,
   Token,
   TradeType,
   Trade as V2Trade,
-} from '@sushiswap/sdk'
+} from '@doc_failure/sushiswap-sdk'
 import { ApprovalState, useApproveCallbackFromTrade } from '../../../hooks/useApproveCallback'
 import { ArrowWrapper, BottomGrouping, SwapCallbackError } from '../../../features/swap/styleds'
 import { AutoRow, RowBetween, RowFixed } from '../../../components/Row'
@@ -408,6 +409,8 @@ export default function Swap({ banners }) {
 
   const handleInputSelect = useCallback(
     (inputCurrency) => {
+      console.log('inputCurrency')
+      console.log(inputCurrency)
       setApprovalSubmitted(false) // reset 2 step UI for approvals
       onCurrencySelection(Field.INPUT, inputCurrency)
     },

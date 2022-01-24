@@ -32,7 +32,7 @@ export const SUPPORTED_NETWORKS: {
       decimals: 18,
     },
     rpcUrls: ['https://testnet.aurora.dev/'],
-    blockExplorerUrls: ['https://explorer.mainnet.aurora.dev/'],
+    blockExplorerUrls: ['https://explorer.testnet.aurora.dev/'],
   },
   /* 
   [ChainId.MAINNET]: {

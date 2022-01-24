@@ -1,5 +1,5 @@
 import { ArrowLeftIcon } from '@heroicons/react/solid'
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@doc_failure/sushiswap-sdk'
 import CompletedOrders from '../../../features/open-order/CompletedOrders'
 import Container from '../../../components/Container'
 import DoubleGlowShadow from '../../../components/DoubleGlowShadow'

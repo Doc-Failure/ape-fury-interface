@@ -1,5 +1,5 @@
 import { InformationCircleIcon } from '@heroicons/react/solid'
-import { ChainId, SUSHI_ADDRESS, MINICHEF_ADDRESS } from '@sushiswap/sdk'
+import { ChainId, SUSHI_ADDRESS, MINICHEF_ADDRESS } from '@doc_failure/sushiswap-sdk'
 import { BigNumber } from '@ethersproject/bignumber'
 import { Chef, PairType } from '../../features/farm/enum'
 import { useActiveWeb3React, useFuse } from '../../hooks'

@@ -291,7 +291,11 @@ function ManageLists({
     async function fetchTempList() {
       fetchList(listUrlInput, false)
         .then((list) => setTempList(list))
-        .catch(() => setAddError('Error importing list'))
+        .catch((e) => {
+          console.log('errore: ')
+          console.log(e)
+          setAddError('Error importing list')
+        })
     }
     // if valid url, fetch details for card
     if (validUrl) {

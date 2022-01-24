@@ -1,15 +1,15 @@
-import { ChainId, Currency, NATIVE, SUSHI_ADDRESS } from '@sushiswap/sdk'
+import { ChainId, Currency, NATIVE, SUSHI_ADDRESS } from '@doc_failure/sushiswap-sdk'
 import { InjectedConnector } from '@web3-react/injected-connector'
 import { WalletLinkConnector } from '@web3-react/walletlink-connector'
 import React, { useEffect, useState } from 'react'
 
-import { ANALYTICS_URL } from '../../constants'
+/* import { ANALYTICS_URL } from '../../constants'
 import Buy from '../../features/ramp'
-import ExternalLink from '../ExternalLink'
+import ExternalLink from '../ExternalLink' */
 import Image from 'next/image'
-import LanguageSwitch from '../LanguageSwitch'
+/* import LanguageSwitch from '../LanguageSwitch' */
 import Link from 'next/link'
-import More from './More'
+/* import More from './More' */
 import NavLink from '../NavLink'
 import { Popover } from '@headlessui/react'
 import QuestionHelper from '../QuestionHelper'
@@ -55,14 +55,14 @@ function AppBar(): JSX.Element {
                           {i18n._(t`Swap`)}
                         </a>
                       </NavLink>
-                      <NavLink href="/pool">
+                      {/*  <NavLink href="/pool">
                         <a
                           id={`pool-nav-link`}
                           className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                         >
                           {i18n._(t`Pool`)}
                         </a>
-                      </NavLink>
+                      </NavLink> */}
                       {chainId && [ChainId.MAINNET, ChainId.MATIC, ChainId.BSC].includes(chainId) && (
                         <NavLink href={'/migrate'}>
                           <a
@@ -70,65 +70,6 @@ function AppBar(): JSX.Element {
                             className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                           >
                             {i18n._(t`Migrate`)}
-                          </a>
-                        </NavLink>
-                      )}
-                      {chainId &&
-                        [
-                          ChainId.MAINNET,
-                          ChainId.MATIC,
-                          ChainId.XDAI,
-                          ChainId.HARMONY,
-                          ChainId.ARBITRUM,
-                          ChainId.CELO,
-                          ChainId.MOONRIVER,
-                          ChainId.FUSE,
-                        ].includes(chainId) && (
-                          <NavLink href={'/farm'}>
-                            <a
-                              id={`farm-nav-link`}
-                              className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                            >
-                              {i18n._(t`Farm`)}
-                            </a>
-                          </NavLink>
-                        )}
-                      {chainId &&
-                        [
-                          ChainId.MAINNET,
-                          ChainId.KOVAN,
-                          ChainId.BSC,
-                          ChainId.MATIC,
-                          ChainId.XDAI,
-                          ChainId.ARBITRUM,
-                          ChainId.AVALANCHE,
-                        ].includes(chainId) && (
-                          <>
-                            <NavLink href={'/lend'}>
-                              <a
-                                id={`lend-nav-link`}
-                                className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                              >
-                                {i18n._(t`Lend`)}
-                              </a>
-                            </NavLink>
-                            <NavLink href={'/borrow'}>
-                              <a
-                                id={`borrow-nav-link`}
-                                className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                              >
-                                {i18n._(t`Borrow`)}
-                              </a>
-                            </NavLink>
-                          </>
-                        )}
-                      {chainId === ChainId.MAINNET && (
-                        <NavLink href={'/stake'}>
-                          <a
-                            id={`stake-nav-link`}
-                            className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                          >
-                            {i18n._(t`Stake`)}
                           </a>
                         </NavLink>
                       )}
@@ -246,17 +187,10 @@ function AppBar(): JSX.Element {
                       )}
                       <Web3Status />
                     </div>
-                    <div className="hidden md:block">
-                      <LanguageSwitch />
-                    </div>
-                    <More />
                   </div>
                 </div>
                 <div className="flex -mr-2 sm:hidden">
                   {/* Mobile menu button */}
-                  <div className="block mr-2 md:hidden">
-                    <LanguageSwitch />
-                  </div>
                   <Popover.Button className="inline-flex items-center justify-center p-2 rounded-md text-primary hover:text-high-emphesis focus:outline-none">
                     <span className="sr-only">{i18n._(t`Open main menu`)}</span>
                     {open ? (
@@ -339,56 +273,6 @@ function AppBar(): JSX.Element {
                         {i18n._(t`Farm`)}
                       </a>
                     </Link>
-                  )}
-
-                {chainId &&
-                  [
-                    ChainId.MAINNET,
-                    ChainId.KOVAN,
-                    ChainId.BSC,
-                    ChainId.MATIC,
-                    ChainId.ARBITRUM,
-                    ChainId.AVALANCHE,
-                  ].includes(chainId) && (
-                    <>
-                      <Link href={'/lend'}>
-                        <a
-                          id={`lend-nav-link`}
-                          className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                        >
-                          {i18n._(t`Lend`)}
-                        </a>
-                      </Link>
-
-                      <Link href={'/borrow'}>
-                        <a
-                          id={`borrow-nav-link`}
-                          className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                        >
-                          {i18n._(t`Borrow`)}
-                        </a>
-                      </Link>
-                    </>
-                  )}
-                {chainId === ChainId.MAINNET && (
-                  <Link href={'/stake'}>
-                    <a
-                      id={`stake-nav-link`}
-                      className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                    >
-                      {i18n._(t`Stake`)}
-                    </a>
-                  </Link>
-                )}
-                {chainId &&
-                  [ChainId.MAINNET, ChainId.BSC, ChainId.XDAI, ChainId.FANTOM, ChainId.MATIC].includes(chainId) && (
-                    <ExternalLink
-                      id={`analytics-nav-link`}
-                      href={ANALYTICS_URL[chainId] || 'https://analytics.sushi.com'}
-                      className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                    >
-                      {i18n._(t`Analytics`)}
-                    </ExternalLink>
                   )}
               </div>
             </Popover.Panel>

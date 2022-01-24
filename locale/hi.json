@@ -291,7 +291,6 @@
   "Slippage tolerance": "स्लिपेज टॉलरेंस",
   "Slippage tolerance...": "स्लिपेज टॉलरेंस...",
   "Something went wrong during signing of the approval. This is expected for hardware wallets, such as Trezor and Ledger. Click again and the fallback method will be used": "अनुमोदन पर हस्ताक्षर के दौरान कुछ गलत हो गया। यह Trezor और लेजर जैसे हार्डवेयर वॉलेट के लिए अपेक्षित है। फिर से क्लिक करें और फ़ॉलबैक विधि का उपयोग किया जाएगा",
-  "Stake": "स्टेक करें",
   "Stake SUSHI": "SUSHI को स्टेक करें",
   "Stake SUSHI for xSUSHI and deposit into Aave in one click. xSUSHI in Aave (aXSUSHI) can be lent or used as collateral for borrowing.": "",
   "Stake SUSHI for xSUSHI and deposit into BentoBox in one click. xSUSHI in BentoBox is automatically\ninvested into a passive yield strategy, and can be lent or used as collateral for borrowing in Kashi.": "",

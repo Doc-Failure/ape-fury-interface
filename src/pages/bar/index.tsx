@@ -1,10 +1,9 @@
 import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallback'
-import { BAR_ADDRESS, ZERO } from '@sushiswap/sdk'
+import { ChainId, BAR_ADDRESS, ZERO } from '@doc_failure/sushiswap-sdk'
 import React, { useEffect, useState } from 'react'
 import { SUSHI, XSUSHI } from '../../constants'
 
 import Button from '../../components/Button'
-import { ChainId } from '@sushiswap/sdk'
 import Container from '../../components/Container'
 import Dots from '../../components/Dots'
 import Head from 'next/head'

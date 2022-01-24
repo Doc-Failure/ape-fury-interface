@@ -12,7 +12,7 @@ import {
 import { useMemo } from 'react'
 import useSWR, { SWRConfiguration } from 'swr'
 
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@doc_failure/sushiswap-sdk'
 import { Chef } from '../../../features/farm/enum'
 import concat from 'lodash/concat'
 import useActiveWeb3React from '../../../hooks/useActiveWeb3React'

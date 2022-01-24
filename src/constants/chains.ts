@@ -27,4 +27,5 @@ export enum SupportedChainId {
   FUSE = 122,
   MOONRIVER = 1285,
   TELOS = 40,
+  AURORA_TESTNET = 1313161555,
 }

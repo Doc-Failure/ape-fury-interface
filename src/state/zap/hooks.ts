@@ -12,7 +12,7 @@ import {
   TradeType,
   WNATIVE,
   ZAPPER_ADDRESS,
-} from '@sushiswap/sdk'
+} from '@doc_failure/sushiswap-sdk'
 import { Field, typeInput } from './actions'
 import { PairState, useV2Pair } from '../../hooks/useV2Pairs'
 import { useCallback, useEffect, useMemo, useState } from 'react'
