@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
-import CurrencyInputPanel from '../limit-order/CurrencyInputPanel'
-import Typography from '../../components/Typography'
+/* import CurrencyInputPanel from '../limit-order/CurrencyInputPanel' */
+/* import Typography from '../../components/Typography' */
 
 interface OutputPanelProps {
   label: string
@@ -8,7 +8,9 @@ interface OutputPanelProps {
 
 const OutputPanel: FC<OutputPanelProps> = ({ label }) => {
   return (
-    <CurrencyInputPanel
+    <></>
+    /* {
+      <CurrencyInputPanel
       id="token-output"
       className="rounded p-0 px-5 border-2 border-dark-800 flex items-center"
       selectComponent={
@@ -18,6 +20,7 @@ const OutputPanel: FC<OutputPanelProps> = ({ label }) => {
       }
       inputComponent={<div className="bg-dark-900 rounded-r sm:w-3/5 h-16" />}
     />
+  } */
   )
 }
 

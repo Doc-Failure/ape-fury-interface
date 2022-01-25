@@ -33,7 +33,7 @@ const ExchangeHeader: FC<ExchangeHeaderProps> = ({ input, output, allowedSlippag
   const router = useRouter()
   const [animateWallet, setAnimateWallet] = useState(false)
   const isRemove = router.asPath.startsWith('/remove')
-  const isLimitOrder = router.asPath.startsWith('/limit-order')
+  /* const isLimitOrder = router.asPath.startsWith('/limit-order') */
 
   return (
     <div className="flex justify-between mb-4 space-x-3 items-center">

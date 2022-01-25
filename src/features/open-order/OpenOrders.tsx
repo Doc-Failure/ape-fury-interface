@@ -122,9 +122,9 @@ const OpenOrders: FC = () => {
         ) : (
           <span>
             No open limit orders. Why not{' '}
-            <NavLink href="/limit-order">
+            {/* <NavLink href="/limit-order">
               <a className="text-sm text-blue underline cursor-pointer">place one?</a>
-            </NavLink>
+            </NavLink> */}
           </span>
         )}
       </div>

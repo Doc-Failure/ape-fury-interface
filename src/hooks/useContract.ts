@@ -45,8 +45,8 @@ import FACTORY_ABI from '../constants/abis/factory.json'
 import INARI_ABI from '../constants/abis/inari.json'
 import IUniswapV2PairABI from '../constants/abis/uniswap-v2-pair.json'
 import KASHIPAIR_ABI from '../constants/abis/kashipair.json'
-import LIMIT_ORDER_ABI from '../constants/abis/limit-order.json'
-import LIMIT_ORDER_HELPER_ABI from '../constants/abis/limit-order-helper.json'
+/* import LIMIT_ORDER_ABI from '../constants/abis/limit-order.json'
+import LIMIT_ORDER_HELPER_ABI from '../constants/abis/limit-order-helper.json' */
 import { OLD_FARMS } from '../constants/onsen'
 import MAKER_ABI from '../constants/abis/maker.json'
 import MASTERCHEF_ABI from '../constants/abis/masterchef.json'
@@ -633,12 +633,13 @@ export function useMeowshiContract(withSignerIfPossible?: boolean): Contract | n
 
 export function useLimitOrderContract(withSignerIfPossibe?: boolean): Contract | null {
   const { chainId } = useActiveWeb3React()
-  return useContract(getVerifyingContract(chainId), LIMIT_ORDER_ABI, withSignerIfPossibe)
+  /*   return useContract(getVerifyingContract(chainId), LIMIT_ORDER_ABI, withSignerIfPossibe) */
+  return null
 }
 
-export function useLimitOrderHelperContract(withSignerIfPossible?: boolean): Contract | null {
+/* export function useLimitOrderHelperContract(withSignerIfPossible?: boolean): Contract | null {
   return useContract('0xe2f736B7d1f6071124CBb5FC23E93d141CD24E12', LIMIT_ORDER_HELPER_ABI, withSignerIfPossible)
-}
+} */
 
 export function useInariContract(withSignerIfPossible?: boolean): Contract | null {
   return useContract('0x195E8262AA81Ba560478EC6Ca4dA73745547073f', INARI_ABI, withSignerIfPossible)
