@@ -49,6 +49,7 @@ function useCallsData(
 ): CallResult[] {
   const { chainId } = useActiveWeb3React()
   const callResults = useAppSelector((state) => state.multicall.callResults)
+  console.log('callResults: ', callResults)
   const dispatch = useAppDispatch()
 
   const serializedCallKeys: string = useMemo(
@@ -67,6 +68,7 @@ function useCallsData(
     const callKeys: string[] = JSON.parse(serializedCallKeys)
     if (!chainId || callKeys.length === 0) return undefined
     const calls = callKeys.map((key) => parseCallKey(key))
+    console.log('chainid: ', chainId, 'calls: ', calls)
     dispatch(
       addMulticallListeners({
         chainId,
@@ -74,7 +76,7 @@ function useCallsData(
         options: { blocksPerFetch },
       })
     )
-
+    console.log("il problema e' qui???????: " + chainId)
     return () => {
       dispatch(
         removeMulticallListeners({
@@ -85,7 +87,6 @@ function useCallsData(
       )
     }
   }, [chainId, dispatch, blocksPerFetch, serializedCallKeys])
-
   return useMemo(
     () =>
       calls.map<CallResult>((call) => {
@@ -225,7 +226,17 @@ export function useMultipleContractSingleData(
   const latestBlockNumber = useBlockNumber()
 
   return useMemo(() => {
-    return results.map((result) => toCallState(result, contractInterface, fragment, latestBlockNumber))
+    return results.map((result) => {
+      console.log('result')
+      console.log(result)
+      console.log('contractInterface')
+      console.log(contractInterface)
+      /*  console.log("fragment")
+      console.log(fragment)
+      console.log("latestBlockNumber")
+      console.log(latestBlockNumber) */
+      return toCallState(result, contractInterface, fragment, latestBlockNumber)
+    })
   }, [fragment, results, contractInterface, latestBlockNumber])
 }
 

@@ -409,8 +409,6 @@ export default function Swap({ banners }) {
 
   const handleInputSelect = useCallback(
     (inputCurrency) => {
-      console.log('inputCurrency')
-      console.log(inputCurrency)
       setApprovalSubmitted(false) // reset 2 step UI for approvals
       onCurrencySelection(Field.INPUT, inputCurrency)
     },

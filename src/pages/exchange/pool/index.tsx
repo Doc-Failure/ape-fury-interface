@@ -153,7 +153,6 @@ export default function Pool() {
             </Empty>
           )}
           <div className={classNames('grid gap-4', migrationSupported ? 'grid-cols-3' : 'grid-cols-2')}>
-            {console.log('NATIVE[chainId]: ' + NATIVE[chainId])}
             <Button
               id="add-pool-button"
               color="gradient"

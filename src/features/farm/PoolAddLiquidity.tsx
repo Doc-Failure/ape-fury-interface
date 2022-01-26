@@ -25,6 +25,7 @@ import CurrencyInputPanel from './CurrencyInputPanel'
 const DEFAULT_ADD_V2_SLIPPAGE_TOLERANCE = new Percent(50, 10_000)
 
 const PoolDeposit = ({ currencyA, currencyB }) => {
+  console.log('Pool deposit')
   const { i18n } = useLingui()
   const { account, chainId, library } = useActiveWeb3React()
 
@@ -255,6 +256,9 @@ const PoolDeposit = ({ currencyA, currencyB }) => {
     } and ${parsedAmounts[Field.CURRENCY_B]?.toSignificant(6)} ${currencies[Field.CURRENCY_B]?.symbol}`
   )
 
+  {
+    console.log('OK')
+  }
   return (
     <div>
       <TransactionConfirmationModal
@@ -273,6 +277,7 @@ const PoolDeposit = ({ currencyA, currencyB }) => {
         pendingText={pendingText}
       />
       <div className="flex flex-col space-y-4">
+        {console.log('add liquidity AAAA')}
         <CurrencyInputPanel
           value={formattedAmounts[Field.CURRENCY_A]}
           currency={currencyA}
@@ -309,6 +314,8 @@ const PoolDeposit = ({ currencyA, currencyB }) => {
           )}
         </div>
         <div>
+          {console.log('account: ' + account)}
+          {console.log('isValid: ' + isValid)}
           {!account ? (
             <Web3Connect size="lg" color="blue" className="w-full" />
           ) : isValid &&
@@ -317,6 +324,8 @@ const PoolDeposit = ({ currencyA, currencyB }) => {
               approvalB === ApprovalState.NOT_APPROVED ||
               approvalB === ApprovalState.PENDING) ? (
             <div className="flex space-x-4">
+              {console.log('approvalA: ' + approvalA)}
+              {console.log('ApprovalState.APPROVED ' + ApprovalState.APPROVED)}
               {approvalA !== ApprovalState.APPROVED && (
                 <Button
                   color="gradient"
@@ -334,6 +343,8 @@ const PoolDeposit = ({ currencyA, currencyB }) => {
                   )}
                 </Button>
               )}
+              {console.log('approvalB: ' + approvalB)}
+              {console.log('ApprovalState.APPROVED ' + ApprovalState.APPROVED)}
               {approvalB !== ApprovalState.APPROVED && (
                 <Button
                   color="gradient"

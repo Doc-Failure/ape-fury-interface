@@ -292,8 +292,6 @@ function ManageLists({
       fetchList(listUrlInput, false)
         .then((list) => setTempList(list))
         .catch((e) => {
-          console.log('errore: ')
-          console.log(e)
           setAddError('Error importing list')
         })
     }

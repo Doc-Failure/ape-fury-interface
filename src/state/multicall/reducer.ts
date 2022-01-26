@@ -50,6 +50,8 @@ export default createReducer(initialState, (builder) =>
           },
         }
       ) => {
+        console.log('Quaaaa??????')
+        debugger
         const listeners: MulticallState['callListeners'] = state.callListeners
           ? state.callListeners
           : (state.callListeners = {})

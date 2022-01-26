@@ -414,6 +414,7 @@ export default function Add() {
               )}
 
               <div>
+                {console.log('add liquidity A')}
                 <CurrencyInputPanel
                   value={formattedAmounts[Field.CURRENCY_A]}
                   onUserInput={onFieldAInput}
@@ -462,7 +463,11 @@ export default function Add() {
                   />
                 </div>
               )}
-
+              {console.log('addIsUnsupported: ' + addIsUnsupported)}
+              {console.log('account: ' + account)}
+              {console.log('approvalA: ' + approvalA)}
+              {console.log('approvalB: ' + approvalB)}
+              {console.log('isValid: ' + isValid)}
               {addIsUnsupported ? (
                 <Button color="gradient" size="lg" disabled>
                   {i18n._(t`Unsupported Asset`)}

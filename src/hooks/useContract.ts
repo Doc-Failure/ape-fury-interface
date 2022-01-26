@@ -84,6 +84,10 @@ export function useContract(address: string | undefined, ABI: any, withSignerIfP
   return useMemo(() => {
     if (!address || address === AddressZero || !ABI || !library) return null
     try {
+      console.log(
+        'contratto: ',
+        getContract(address, ABI, library, withSignerIfPossible && account ? account : undefined)
+      )
       return getContract(address, ABI, library, withSignerIfPossible && account ? account : undefined)
     } catch (error) {
       console.error('Failed to get contract', error)
@@ -159,7 +163,10 @@ export function usePendingContract(): Contract | null {
 
 export function useMulticall2Contract() {
   const { chainId } = useActiveWeb3React()
-  return useContract(chainId && MULTICALL2_ADDRESS[chainId], MULTICALL2_ABI, false)
+  console.log('recupero Multicall')
+  //'0x4a5143B13C84DB00E6d8c19b9EA00f3b91416d20'
+  //return useContract(chainId && MULTICALL2_ADDRESS[chainId], MULTICALL2_ABI, false)
+  return useContract('0x4a5143B13C84DB00E6d8c19b9EA00f3b91416d20', MULTICALL2_ABI, false)
 }
 
 export function useSushiContract(withSignerIfPossible = true): Contract | null {

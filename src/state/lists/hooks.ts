@@ -121,13 +121,7 @@ export function useInactiveListUrls(): string[] {
 // get all the tokens from active lists, combine with local default tokens
 export function useCombinedActiveList(): TokenAddressMap {
   const activeListUrls = useActiveListUrls()
-  /* const activeListUrls = ["https://api.jsonbin.io/b/61ee8ba65c8caf43a69c4592"]; */
-  console.log('activeListUrls')
-  console.log(activeListUrls)
   const activeTokens = useCombinedTokenMapFromUrls(activeListUrls)
-  console.log('activeTokens')
-  console.log(activeTokens)
-  debugger
   return combineMaps(activeTokens, TRANSFORMED_DEFAULT_TOKEN_LIST)
 }
 

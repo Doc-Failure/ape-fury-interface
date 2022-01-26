@@ -32,7 +32,7 @@
     "@clover-network/clover-connector": "^1.0.0",
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
-    "@doc_failure/sushiswap-sdk": "5.0.0-aurora-network.6",
+    "@doc_failure/sushiswap-sdk": "5.0.0-aurora-network.8",
     "@ethereumjs/common": "^2.3.0",
     "@ethereumjs/tx": "^3.2.0",
     "@ethersproject/abi": "^5.4.0",
