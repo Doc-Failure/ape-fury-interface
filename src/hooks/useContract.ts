@@ -40,6 +40,7 @@ import EIP_2612_ABI from '../constants/abis/eip-2612.json'
 import ENS_ABI from '../constants/abis/ens-registrar.json'
 import ENS_PUBLIC_RESOLVER_ABI from '../constants/abis/ens-public-resolver.json'
 import ERC20_ABI from '../constants/abis/erc20.json'
+import ERC20_TOKEN_FACTORY_ABI from '../constants/abis/ERC20TokenFactory.json'
 import { ERC20_BYTES32_ABI } from '../constants/abis/erc20'
 import FACTORY_ABI from '../constants/abis/factory.json'
 import INARI_ABI from '../constants/abis/inari.json'
@@ -84,10 +85,6 @@ export function useContract(address: string | undefined, ABI: any, withSignerIfP
   return useMemo(() => {
     if (!address || address === AddressZero || !ABI || !library) return null
     try {
-      console.log(
-        'contratto: ',
-        getContract(address, ABI, library, withSignerIfPossible && account ? account : undefined)
-      )
       return getContract(address, ABI, library, withSignerIfPossible && account ? account : undefined)
     } catch (error) {
       console.error('Failed to get contract', error)
@@ -98,6 +95,10 @@ export function useContract(address: string | undefined, ABI: any, withSignerIfP
 
 export function useTokenContract(tokenAddress?: string, withSignerIfPossible?: boolean): Contract | null {
   return useContract(tokenAddress, ERC20_ABI, withSignerIfPossible)
+}
+
+export function useERC20TokenFactoryContract(tokenAddress?: string, withSignerIfPossible?: boolean): Contract | null {
+  return useContract(tokenAddress, ERC20_TOKEN_FACTORY_ABI, withSignerIfPossible)
 }
 
 export function useWETH9Contract(withSignerIfPossible?: boolean): Contract | null {
@@ -163,9 +164,9 @@ export function usePendingContract(): Contract | null {
 
 export function useMulticall2Contract() {
   const { chainId } = useActiveWeb3React()
-  console.log('recupero Multicall')
   //'0x4a5143B13C84DB00E6d8c19b9EA00f3b91416d20'
   //return useContract(chainId && MULTICALL2_ADDRESS[chainId], MULTICALL2_ABI, false)
+  //TODO - Read multicall2 from SDK
   return useContract('0x4a5143B13C84DB00E6d8c19b9EA00f3b91416d20', MULTICALL2_ABI, false)
 }
 

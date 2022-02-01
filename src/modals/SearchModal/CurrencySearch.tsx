@@ -65,7 +65,7 @@ export function CurrencySearch({
   setImportToken,
   currencyList,
   includeNativeCurrency = true,
-  allowManageTokenList = true,
+  allowManageTokenList = false,
   hideBalance = false,
   showSearch = true,
 }: CurrencySearchProps) {

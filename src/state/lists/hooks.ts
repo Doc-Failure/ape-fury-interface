@@ -7,6 +7,7 @@ import { WrappedTokenInfo } from './wrappedTokenInfo'
 import { sortByListPriority } from '../../functions/list'
 import { useAppSelector } from '../hooks'
 import { useMemo } from 'react'
+import { useERC20TokenFactoryContract } from '../../hooks/useContract'
 
 export type TokenAddressMap = Readonly<{
   [chainId: number]: Readonly<{
@@ -85,6 +86,7 @@ function combineMaps(map1: TokenAddressMap, map2: TokenAddressMap): TokenAddress
 
 // merge tokens contained within lists from urls
 function useCombinedTokenMapFromUrls(urls: string[] | undefined): TokenAddressMap {
+  debugger
   const lists = useAllLists()
   return useMemo(() => {
     if (!urls) return {}
@@ -122,6 +124,7 @@ export function useInactiveListUrls(): string[] {
 export function useCombinedActiveList(): TokenAddressMap {
   const activeListUrls = useActiveListUrls()
   const activeTokens = useCombinedTokenMapFromUrls(activeListUrls)
+  debugger
   return combineMaps(activeTokens, TRANSFORMED_DEFAULT_TOKEN_LIST)
 }
 
@@ -143,4 +146,36 @@ export function useUnsupportedTokenList(): TokenAddressMap {
 export function useIsListActive(url: string): boolean {
   const activeListUrls = useActiveListUrls()
   return Boolean(activeListUrls?.includes(url))
+}
+
+async function getAddressFromSmartContract() {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const tokenFactoryContract = useERC20TokenFactoryContract('0x80B2f8B2eA0B79347dBA5d9715AC047df3beED5f')
+  return await tokenFactoryContract.getD().getContracts()
+}
+
+function useCombinedTokenMapFromSmartContractGet(): TokenAddressMap {
+  const deployedContracts = getAddressFromSmartContract()
+  const map = list.tokens.reduce<TokenAddressMap>((tokenMap, tokenInfo) => {
+    const token = new WrappedTokenInfo(tokenInfo, list)
+    if (tokenMap[token.chainId]?.[token.address] !== undefined) {
+      console.error(new Error(`Duplicate token! ${token.address}`))
+      return tokenMap
+    }
+    return {
+      ...tokenMap,
+      [token.chainId]: {
+        ...tokenMap[token.chainId],
+        [token.address]: {
+          token,
+          list,
+        },
+      },
+    }
+  }, {})
+  listCache?.set(list, map)
+  return map
+
+  return {}
+  //return allTokens
 }

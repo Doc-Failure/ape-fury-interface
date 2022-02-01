@@ -215,7 +215,7 @@ const builders = {
     const prefix = 'https://explorer.testnet.aurora.dev/'
     switch (type) {
       case 'transaction':
-        return `${prefix}/txs/${data}`
+        return `${prefix}/tx/${data}`
       case 'token':
         return `${prefix}/address/${data}`
       case 'address':

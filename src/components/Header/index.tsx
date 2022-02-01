@@ -43,7 +43,7 @@ function AppBar(): JSX.Element {
             <div className="px-4 py-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                  <Image src="/logo-santa.png" alt="Sushi" width="32px" height="32px" unoptimized />
+                  <Image src="/ape_fury.png" alt="Sushi" width="48px" height="40px" unoptimized />
                   <div className="hidden sm:block sm:ml-4">
                     <div className="flex space-x-2">
                       {/* <Buy /> */}
@@ -55,6 +55,14 @@ function AppBar(): JSX.Element {
                           {i18n._(t`Swap`)}
                         </a>
                       </NavLink>
+                      <NavLink href="/factory">
+                        <a
+                          id={`swap-nav-link`}
+                          className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                        >
+                          {i18n._(t`Token Factory`)}
+                        </a>
+                      </NavLink>
                       {/*  <NavLink href="/pool">
                         <a
                           id={`pool-nav-link`}
@@ -63,7 +71,7 @@ function AppBar(): JSX.Element {
                           {i18n._(t`Pool`)}
                         </a>
                       </NavLink> */}
-                      {chainId && [ChainId.MAINNET, ChainId.MATIC, ChainId.BSC].includes(chainId) && (
+                      {/* {chainId && [ChainId.MAINNET, ChainId.MATIC, ChainId.BSC].includes(chainId) && (
                         <NavLink href={'/migrate'}>
                           <a
                             id={`migrate-nav-link`}
@@ -72,7 +80,7 @@ function AppBar(): JSX.Element {
                             {i18n._(t`Migrate`)}
                           </a>
                         </NavLink>
-                      )}
+                      )} */}
                     </div>
                   </div>
                 </div>
@@ -127,18 +135,18 @@ function AppBar(): JSX.Element {
 
                     {chainId && chainId in SUSHI_ADDRESS && library && library.provider.isMetaMask && (
                       <>
-                        <QuestionHelper text={i18n._(t`Add SUSHI to your MetaMask wallet`)}>
+                        <QuestionHelper text={`Add AURORA to your MetaMask wallet`}>
                           <div
                             className="hidden rounded-md cursor-pointer sm:inline-flex bg-dark-900 hover:bg-dark-800 p-0.5"
                             onClick={() => {
                               const params: any = {
                                 type: 'ERC20',
                                 options: {
-                                  address: SUSHI_ADDRESS[chainId],
-                                  symbol: 'SUSHI',
+                                  address: '0x8bec47865ade3b172a928df8f990bc7f2a3b9f79',
+                                  symbol: 'AURORA',
                                   decimals: 18,
                                   image:
-                                    'https://raw.githubusercontent.com/sushiswap/logos/main/network/ethereum/0x6B3595068778DD592e39A122f4f5a5cF09C90fE2.jpg',
+                                    'https://raw.githubusercontent.com/aurora-is-near/design-assets/main/token-logo/token.png',
                                 },
                               }
                               if (library && library.provider.isMetaMask && library.provider.request) {
@@ -149,7 +157,7 @@ function AppBar(): JSX.Element {
                                   })
                                   .then((success) => {
                                     if (success) {
-                                      console.log('Successfully added SUSHI to MetaMask')
+                                      console.log('Successfully added AURORA to MetaMask')
                                     } else {
                                       throw new Error('Something went wrong.')
                                     }
@@ -159,12 +167,12 @@ function AppBar(): JSX.Element {
                             }}
                           >
                             <Image
-                              src="/images/tokens/sushi-square.jpg"
-                              alt="SUSHI"
+                              src="https://raw.githubusercontent.com/aurora-is-near/design-assets/main/token-logo/token.png"
+                              alt="AURORA"
                               width="38px"
                               height="38px"
                               objectFit="contain"
-                              className="rounded-md"
+                              className="rounded"
                             />
                           </div>
                         </QuestionHelper>
@@ -178,13 +186,13 @@ function AppBar(): JSX.Element {
                     )}
 
                     <div className="w-auto flex items-center rounded bg-dark-900 hover:bg-dark-800 p-0.5 whitespace-nowrap text-sm font-bold cursor-pointer select-none pointer-events-auto">
-                      {account && chainId && userEthBalance && (
+                      {/* {account && chainId && userEthBalance && (
                         <>
                           <div className="px-3 py-2 text-primary text-bold">
                             {userEthBalance?.toSignificant(4)} {NATIVE[chainId].symbol}
                           </div>
                         </>
-                      )}
+                      )} */}
                       <Web3Status />
                     </div>
                   </div>
@@ -227,7 +235,7 @@ function AppBar(): JSX.Element {
               </div>
             </div>
 
-            <Popover.Panel className="sm:hidden">
+            {/* <Popover.Panel className="sm:hidden">
               <div className="flex flex-col px-4 pt-2 pb-3 space-y-1">
                 <Link href={'/swap'}>
                   <a
@@ -275,7 +283,7 @@ function AppBar(): JSX.Element {
                     </Link>
                   )}
               </div>
-            </Popover.Panel>
+            </Popover.Panel> */}
           </>
         )}
       </Popover>

@@ -52,7 +52,7 @@ const useMigrateState: () => MigrateState = () => {
       }
 
       addTransaction(tx, {
-        summary: `Migrate ${exchange} ${state.selectedLPToken.symbol} liquidity to SushiSwap`,
+        summary: `Migrate ${exchange} ${state.selectedLPToken.symbol} liquidity to Ape Fury`,
       })
       setPendingMigrationHash(tx.hash)
 

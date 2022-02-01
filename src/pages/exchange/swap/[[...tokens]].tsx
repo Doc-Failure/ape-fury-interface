@@ -74,10 +74,13 @@ import { useRouter } from 'next/router'
 import { useSwapCallback } from '../../../hooks/useSwapCallback'
 import { useUSDCValue } from '../../../hooks/useUSDCPrice'
 import { warningSeverity } from '../../../functions/prices'
+import { enableList, removeList } from '../../../state/lists/actions'
 
 import Image from 'next/image'
 import Banner from '../../../components/Banner'
 import { fetchAPI } from '../../../lib/api'
+import { useDispatch } from 'react-redux'
+import { AppDispatch } from '../../../state'
 
 export async function getServerSideProps() {
   try {
@@ -443,34 +446,39 @@ export default function Swap({ banners }) {
 
   const previousChainId = usePrevious<ChainId>(chainId)
 
-  // useEffect(() => {
-  //   if (
-  //     previousChainId &&
-  //     previousChainId !== chainId &&
-  //     router.asPath.includes(Currency.getNativeCurrencySymbol(previousChainId))
-  //   ) {
-  //     router.push(`/swap/${Currency.getNativeCurrencySymbol(chainId)}`);
-  //   }
-  // }, [chainId, previousChainId, router]);
+  const dispatch = useDispatch<AppDispatch>()
+  useEffect(() => {
+    if (chainId === ChainId.AURORA_TESTNET)
+      dispatch(
+        enableList('https://raw.githubusercontent.com/Doc-Failure/aurora-testnet-tokenlist/main/aurora_tokens.json')
+      )
+    //   if (
+    //     previousChainId &&
+    //     previousChainId !== chainId &&
+    //     router.asPath.includes(Currency.getNativeCurrencySymbol(previousChainId))
+    //   ) {
+    //     router.push(`/swap/${Currency.getNativeCurrencySymbol(chainId)}`);
+    //   }
+  }, [])
 
   return (
     <Container id="swap-page" className="py-4 md:py-8 lg:py-12">
       <Head>
-        <title>{i18n._(t`SushiSwap`)} | Sushi</title>
+        <title>Ape Fury</title>
         <meta
           key="description"
           name="description"
-          content="SushiSwap allows for swapping of ERC20 compatible tokens across multiple networks"
+          content="Ape Fury allows for swapping of ERC20 compatible tokens across multiple networks"
         />
         <meta
           key="twitter:description"
           name="twitter:description"
-          content="SushiSwap allows for swapping of ERC20 compatible tokens across multiple networks"
+          content="Ape Fury allows for swapping of ERC20 compatible tokens across multiple networks"
         />
         <meta
           key="og:description"
           property="og:description"
-          content="SushiSwap allows for swapping of ERC20 compatible tokens across multiple networks"
+          content="Ape Fury allows for swapping of ERC20 compatible tokens across multiple networks"
         />
       </Head>
       <TokenWarningModal
