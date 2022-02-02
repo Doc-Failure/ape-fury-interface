@@ -4,7 +4,6 @@ import { currencyId } from '../../functions/currency'
 import { useActiveWeb3React } from '../../hooks'
 
 export default function LiquidityHeader({ input = undefined, output = undefined }: any): JSX.Element {
-  console.log('liquidity header')
   const { chainId } = useActiveWeb3React()
   return (
     <div className="grid grid-cols-2 rounded-md p-3px bg-dark-800">

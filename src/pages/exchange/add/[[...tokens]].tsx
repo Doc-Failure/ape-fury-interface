@@ -141,8 +141,6 @@ export default function Add() {
 
     const { [Field.CURRENCY_A]: parsedAmountA, [Field.CURRENCY_B]: parsedAmountB } = parsedAmounts
 
-    console.log({ parsedAmountA, parsedAmountB, currencyA, currencyB, deadline })
-
     if (!parsedAmountA || !parsedAmountB || !currencyA || !currencyB || !deadline) {
       return
     }

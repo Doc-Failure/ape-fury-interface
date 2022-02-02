@@ -23,10 +23,6 @@ export function useV2Pairs(currencies: [Currency | undefined, Currency | undefin
   const pairAddresses = useMemo(
     () =>
       tokens.map(([tokenA, tokenB]) => {
-        /* console.log(
-          "FACTORY_ADDRESS[tokenA.chainId]")
-        console.log(
-          FACTORY_ADDRESS[tokenA?.chainId]) */
         return tokenA &&
           tokenB &&
           tokenA.chainId === tokenB.chainId &&
@@ -42,9 +38,6 @@ export function useV2Pairs(currencies: [Currency | undefined, Currency | undefin
     [tokens]
   )
 
-  /*  console.log("pairAddresses:  "+pairAddresses)
-  console.log("PAIR_INTERFACE: ")
-  console.log(PAIR_INTERFACE) */
   const results = useMultipleContractSingleData(pairAddresses, PAIR_INTERFACE, 'getReserves')
 
   return useMemo(() => {
@@ -70,9 +63,5 @@ export function useV2Pairs(currencies: [Currency | undefined, Currency | undefin
 
 export function useV2Pair(tokenA?: Currency, tokenB?: Currency): [PairState, Pair | null] {
   const inputs: [[Currency | undefined, Currency | undefined]] = useMemo(() => [[tokenA, tokenB]], [tokenA, tokenB])
-  /*   console.log("inputs: ")
-  console.log(inputs)
-  console.log("----------------------------useV2Pairs: ")
-  console.log(useV2Pairs(inputs)[0]) */
   return useV2Pairs(inputs)[0]
 }
