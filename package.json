@@ -51,6 +51,7 @@
     "@lingui/react": "^3.10.2",
     "@lingui/remote-loader": "^3.10.4",
     "@metamask/jazzicon": "^2.0.0",
+    "@netlify/plugin-nextjs": "^4.2.5",
     "@next/bundle-analyzer": "^11.0.1",
     "@popperjs/core": "^2.9.2",
     "@ramp-network/ramp-instant-sdk": "^2.4.6",
