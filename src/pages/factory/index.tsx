@@ -39,7 +39,7 @@ export async function getServerSideProps() {
   }
 }
 
-export default function Swap({ banners }) {
+export default function Factory({ banners }) {
   const handleChange = (e) => {
     const name = e.target.name
     const value = e.target.value
@@ -76,7 +76,7 @@ export default function Swap({ banners }) {
       })
   }
 
-  const tokenFactoryContract = useERC20TokenFactoryContract('0x80B2f8B2eA0B79347dBA5d9715AC047df3beED5f')
+  const tokenFactoryContract = useERC20TokenFactoryContract('0xaeFAcfec21258446C63E0571782D8291c5244175')
   const { i18n } = useLingui()
 
   const loadedUrlParams = useDefaultsFromURLSearch()
@@ -275,7 +275,6 @@ export default function Swap({ banners }) {
                             inputMode="decimal"
                             min={0}
                             minLength={1}
-                            maxLength={79}
                             value={tokenDetail.tokenInitialSupply}
                             onChange={(e) => handleChange(e)}
                           />

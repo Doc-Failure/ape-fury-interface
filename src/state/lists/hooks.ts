@@ -148,10 +148,10 @@ export function useIsListActive(url: string): boolean {
 
 async function getAddressFromSmartContract() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const tokenFactoryContract = useERC20TokenFactoryContract('0x80B2f8B2eA0B79347dBA5d9715AC047df3beED5f')
+  const tokenFactoryContract = useERC20TokenFactoryContract('0xaeFAcfec21258446C63E0571782D8291c5244175')
   return await tokenFactoryContract.getD().getContracts()
 }
-
+/* 
 function useCombinedTokenMapFromSmartContractGet(): TokenAddressMap {
   const deployedContracts = getAddressFromSmartContract()
   const map = list.tokens.reduce<TokenAddressMap>((tokenMap, tokenInfo) => {
@@ -177,3 +177,4 @@ function useCombinedTokenMapFromSmartContractGet(): TokenAddressMap {
   return {}
   //return allTokens
 }
+ */

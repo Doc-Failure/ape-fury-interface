@@ -59,6 +59,7 @@ import MULTICALL2_ABI from '../constants/abis/multicall2.json'
 import PENDING_ABI from '../constants/abis/pending.json'
 import ROUTER_ABI from '../constants/abis/router.json'
 import SAAVE_ABI from '../constants/abis/saave.json'
+import ERC20_TOKEN_LAUNCHER from '../constants/abis/ERC20TokenLauncher.json'
 import SUSHIROLL_ABI from '@sushiswap/core/abi/SushiRoll.json'
 import SUSHISWAP_TWAP_ORACLE_ABI from '../constants/abis/sushiswap-slp-oracle.json'
 import SUSHI_ABI from '../constants/abis/sushi.json'
@@ -101,6 +102,9 @@ export function useERC20TokenFactoryContract(tokenAddress?: string, withSignerIf
   return useContract(tokenAddress, ERC20_TOKEN_FACTORY_ABI, withSignerIfPossible)
 }
 
+export function useTokenLauncherContract(tokenAddress?: string, withSignerIfPossible?: boolean): Contract | null {
+  return useContract(tokenAddress, ERC20_TOKEN_LAUNCHER, withSignerIfPossible)
+}
 export function useWETH9Contract(withSignerIfPossible?: boolean): Contract | null {
   const { chainId } = useActiveWeb3React()
   return useContract(chainId ? WNATIVE[chainId].address : undefined, WETH9_ABI, withSignerIfPossible)

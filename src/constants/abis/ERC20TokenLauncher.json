@@ -1,0 +1,170 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_tokenLaunchName",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "quantity",
+        "type": "uint256"
+      }
+    ],
+    "name": "fundTokenLaunchCampaign",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getListOfTokenLaunchCampaigns",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "_tokenAddr",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_quantityEarlyUsersPool",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_quantityLiquidityPool",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_expiringDay",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "_campaignOwner",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "_temporaryLiquidityToken",
+            "type": "address"
+          },
+          {
+            "internalType": "string",
+            "name": "_launchName",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct ERC20TokenLauncher.tokenLaunchCampaignStruct[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_tokenLaunchName",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "quantity",
+        "type": "uint256"
+      }
+    ],
+    "name": "receivefundFromTokenLaunchCampaign",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_tokenAddr",
+        "type": "address"
+      },
+      {
+        "internalType": "uint128",
+        "name": "_percentageEarlyUsersPool",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint128",
+        "name": "_percentageLiquidityPool",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint128",
+        "name": "_daysBeforeExpiring",
+        "type": "uint128"
+      },
+      {
+        "internalType": "string",
+        "name": "_tokenLaunchName",
+        "type": "string"
+      }
+    ],
+    "name": "setUpTokenLaunchCampaign",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "name": "tokenLaunchCampaign",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "_tokenAddr",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_quantityEarlyUsersPool",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_quantityLiquidityPool",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_expiringDay",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "_campaignOwner",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_temporaryLiquidityToken",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "_launchName",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

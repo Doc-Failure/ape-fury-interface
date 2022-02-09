@@ -95,23 +95,23 @@ function AppBar(): JSX.Element {
 
                 <div className="fixed bottom-0 left-0 z-10 flex flex-row items-center justify-center w-full p-4 lg:w-auto bg-dark-1000 lg:relative lg:p-0 lg:bg-transparent">
                   <div className="flex items-center justify-between w-full space-x-2 sm:justify-end">
-                    {chainId && [ChainId.MAINNET].includes(chainId) && library && library.provider.isMetaMask && (
+                    {chainId && chainId in SUSHI_ADDRESS && library && library.provider.isMetaMask && (
                       <>
-                        <QuestionHelper text={i18n._(t`Add xSUSHI to your MetaMask wallet`)}>
+                        <QuestionHelper text={`Add Near to your MetaMask wallet`}>
                           <div
-                            className="hidden p-0.5 rounded-md cursor-pointer sm:inline-flex bg-dark-900 hover:bg-dark-800"
+                            className="hidden rounded-md cursor-pointer sm:inline-flex bg-dark-900 hover:bg-dark-800 p-0.5"
                             onClick={() => {
+                              const params: any = {
+                                type: 'ERC20',
+                                options: {
+                                  address: '0x4861825e75ab14553e5af711ebbe6873d369d146',
+                                  symbol: 'wNear',
+                                  decimals: 24,
+                                  image:
+                                    'https://raw.githubusercontent.com/aurora-is-near/bridge-assets/master/tokens/wnear.svg',
+                                },
+                              }
                               if (library && library.provider.isMetaMask && library.provider.request) {
-                                const params: any = {
-                                  type: 'ERC20',
-                                  options: {
-                                    address: '0x8798249c2e607446efb7ad49ec89dd1865ff4272',
-                                    symbol: 'XSUSHI',
-                                    decimals: 18,
-                                    image:
-                                      'https://raw.githubusercontent.com/sushiswap/logos/main/network/ethereum/0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272.jpg',
-                                  },
-                                }
                                 library.provider
                                   .request({
                                     method: 'wallet_watchAsset',
@@ -119,7 +119,7 @@ function AppBar(): JSX.Element {
                                   })
                                   .then((success) => {
                                     if (success) {
-                                      console.log('Successfully added XSUSHI to MetaMask')
+                                      console.log('Successfully added AURORA to MetaMask')
                                     } else {
                                       throw new Error('Something went wrong.')
                                     }
@@ -129,18 +129,17 @@ function AppBar(): JSX.Element {
                             }}
                           >
                             <Image
-                              src="/images/tokens/xsushi-square.jpg"
-                              alt="xSUSHI"
+                              src="https://raw.githubusercontent.com/aurora-is-near/bridge-assets/master/tokens/wnear.svg"
+                              alt="Near"
                               width="38px"
                               height="38px"
                               objectFit="contain"
-                              className="rounded-md"
+                              className="rounded"
                             />
                           </div>
                         </QuestionHelper>
                       </>
                     )}
-
                     {chainId && chainId in SUSHI_ADDRESS && library && library.provider.isMetaMask && (
                       <>
                         <QuestionHelper text={`Add AURORA to your MetaMask wallet`}>
@@ -186,7 +185,6 @@ function AppBar(): JSX.Element {
                         </QuestionHelper>
                       </>
                     )}
-
                     {library && (library.provider.isMetaMask || isCbWallet) && (
                       <div className="hidden sm:inline-block">
                         <Web3Network />
