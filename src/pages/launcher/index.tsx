@@ -55,9 +55,7 @@ export default function Launcher({ banners }) {
   const tokenContract = useTokenContract(tokenAddress)
 
   useEffect(() => {
-    if (!launchList) {
-      getContracts()
-    }
+    getContracts()
   }, [])
 
   const fundTokenCampaign = async (tokenLaunchName, quantity) => {
