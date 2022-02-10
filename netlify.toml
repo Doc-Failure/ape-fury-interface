@@ -1,5 +1,2 @@
 [build]
     publish = ".next"
-
-[[redirects]]
-    /* /swap 200

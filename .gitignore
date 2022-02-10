@@ -25,3 +25,5 @@ public/workbox*.js.map
 .env
 
 lokalise.yaml
+# Local Netlify folder
+.netlify
