@@ -15,16 +15,15 @@ import Button from '../../components/Button'
 import { useERC20TokenFactoryContract, useTokenLauncherContract, useTokenContract } from '../../hooks/useContract'
 import { _nameprepTableA1 } from '@ethersproject/strings/lib/idna'
 import { toInteger } from 'lodash'
-import { ethers } from 'ethers'
-import NumericalInput from '../../components/NumericalInput'
+import { BigNumber, ethers } from 'ethers'
 
 interface ITokenLaunchDetail {
   _launchName: string
   _campaignOwner: string
   _tokenAddr: number
   _expiringDay: string
-  _quantityEarlyUsersPool: string
-  _quantityLiquidityPool: string
+  _quantityEarlyUsersPool: number
+  _quantityLiquidityPool: number
 }
 
 export default function Launcher({ banners }) {
@@ -48,25 +47,34 @@ export default function Launcher({ banners }) {
   const [launching_days, setlaunching_days] = useState(0)
   const [tokenAddress, setTokenAddress] = useState('')
   const [launchList, setLaunchList] = useState(<></>)
-  const [tokenToSendToPresale, setTokenToSendToPresale] = useState(0)
+  const [tokenToSendToPresale, setTokenToSendToPresale] = useState(0.0)
 
-  const tokenLauncherContract = useTokenLauncherContract('0x6125f9Ee4309e417f169762275739510901cb041')
+  const tokenLauncherContract = useTokenLauncherContract('0x4E3016da4e642233C332710ADBa169A92E096Fad')
   const tokenFactoryContract = useERC20TokenFactoryContract('0xaeFAcfec21258446C63E0571782D8291c5244175')
+  const wNearToken = useTokenContract('0x4861825E75ab14553E5aF711EbbE6873d369d146')
   const tokenContract = useTokenContract(tokenAddress)
 
   useEffect(() => {
     getContracts()
-  }, [])
+  }, [tokenToSendToPresale])
 
-  const fundTokenCampaign = async (tokenLaunchName, quantity) => {
-    tokenLauncherContract.fundTokenLaunchCampaign(tokenLaunchName, quantity).then((res) => {
-      console.log(res)
+  const fundTokenCampaign = () => {
+    wNearToken.approve(tokenLauncherContract.address, ethers.constants.MaxUint256.toString()).then((response) => {
+      console.log('response')
+      console.log(response)
+
+      tokenLauncherContract
+        .fundTokenLaunchCampaign(launchName, BigNumber.from(tokenToSendToPresale * 10 ** 9))
+        .then((res) => {
+          console.log(res)
+        })
     })
   }
 
   const getContracts = async () => {
     const arrayOfToken = await tokenLauncherContract.getListOfTokenLaunchCampaigns()
     const launches = arrayOfToken.map((res, index) => {
+      console.log(res)
       return (
         <div key={index} className="bg-white shadow overflow-hidden sm:rounded-lg">
           <div className="px-4 py-5 sm:px-6">
@@ -92,7 +100,7 @@ export default function Launcher({ banners }) {
               <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-sm font-medium text-gray-500">Early User % </dt>
                 <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                  {ethers.utils.formatEther(res._quantityEarlyUsersPool)}%
+                  {parseFloat(ethers.utils.formatEther(res._quantityEarlyUsersPool)) / 100}%
                 </dd>
               </div>
             </dl>
@@ -100,50 +108,45 @@ export default function Launcher({ banners }) {
               <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-sm font-medium text-gray-500">Liquidity Pool %</dt>
                 <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                  {ethers.utils.formatEther(res._quantityLiquidityPool)}%
+                  {parseFloat(ethers.utils.formatEther(res._quantityLiquidityPool)) / 100}%
                 </dd>
               </div>
             </dl>
           </div>
-          <div>
+          <div className="flex bg-gray-500 justify-center p-2">
             {/* TODO se non e' scaduto allora refundo, altrimenti ritiro. */}
-            <div className="flex justify-center">
-              <Button
-                color="gradient"
-                size="sm"
-                className="w-3/4 m-1"
-                onClick={launchToken}
-                disabled={launchingCampaignInProgress}
-              >
-                {Math.floor(Date.now() / 1000) > res._expiringDay
-                  ? i18n._(t`Receive Tokens!`)
-                  : i18n._(t`Fund Campaign!`)}
-              </Button>
-
-              <div
-                className="flex items-center w-full space-x-3 rounded bg-dark-900 focus:bg-dark-700 w-3/4 m-2"
-                // showMaxButton && selectedCurrencyBalance && 'px-3'
-              >
-                <NumericalInput
-                  id="token-amount-input"
-                  value={tokenToSendToPresale}
-                  onUserInput={(val) => {
-                    setTokenToSendToPresale(parseInt(val))
-                    console.log(val)
-                    console.log(tokenToSendToPresale)
-                  }}
-                />
-              </div>
-              <Button
-                color="gradient"
-                size="sm"
-                className="w-3/4 m-1"
-                /*  onClick={fundTokenCampaign} */ disabled={launchingCampaignInProgress}
-              >
-                {i18n._(t`DUMMIES BUTTON Fund Campaign!`)}
-              </Button>
-            </div>
+            <input
+              className="bg-gray-200 rounded w-1/4 text-gray-700 focus:outline-none focus:bg-white focus:border-purple-500 p-1"
+              name="tokenToSendToPresale"
+              id="token-to-send-to-presale"
+              type="number"
+              step="0.01"
+              value={tokenToSendToPresale}
+              onChange={(e) => setTokenToSendToPresale(parseFloat(e.target.value))}
+            />
+            <Button
+              color="gradient"
+              size="sm"
+              className="w-1/4 m-1 py-2 px-4"
+              onClick={fundTokenCampaign}
+              disabled={launchingCampaignInProgress}
+            >
+              {i18n._(t`Fund Campaign!`)}
+            </Button>
+            {/*  <div className={'flex flex-grow items-center w-full space-x-3 rounded focus:bg-dark-700 p-3'}> */}
           </div>
+          {/* <Button
+                  color="gradient"
+                  size="sm"
+                  className="w-1/4 m-1"
+                  onClick={launchToken}
+                  disabled={launchingCampaignInProgress}
+                >{i18n._(t`Receive Tokens!`)} */}
+          {/* {Math.floor(Date.now() / 1000) > res._expiringDay
+                    ? i18n._(t`Receive Tokens!`)
+                    : i18n._(t`Fund Campaign!`)} */}
+          {/* </Button> */}
+          {/*   </div> */}
         </div>
       )
     })
@@ -428,13 +431,11 @@ export default function Launcher({ banners }) {
                           {/* <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-token-initial-supply" type="number" value="21000000"/> */}
                           <input
                             className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                            name="tokenInitialSupply"
-                            id="token-initial-supply"
+                            name="tokenToFundCampaign"
+                            id="token-to-fund-campaign"
                             type="number"
-                            placeholder="21000000"
+                            placeholder="0"
                             inputMode="decimal"
-                            min={1}
-                            max={180}
                             value={launching_days}
                             onChange={(e) =>
                               toInteger(e.target.value) > 180
