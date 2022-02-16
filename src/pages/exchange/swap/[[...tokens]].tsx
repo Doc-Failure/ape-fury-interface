@@ -448,10 +448,16 @@ export default function Swap({ banners }) {
 
   const dispatch = useDispatch<AppDispatch>()
   useEffect(() => {
-    if (chainId === ChainId.AURORA_TESTNET)
+    if (chainId === ChainId.AURORA_TESTNET) {
       dispatch(
         enableList('https://raw.githubusercontent.com/Doc-Failure/aurora-testnet-tokenlist/main/aurora_tokens.json')
       )
+      dispatch(
+        enableList(
+          'https://raw.githubusercontent.com/Doc-Failure/aurora-testnet-tokenlist/main/aurora_tokens_original.json'
+        )
+      )
+    }
     //   if (
     //     previousChainId &&
     //     previousChainId !== chainId &&

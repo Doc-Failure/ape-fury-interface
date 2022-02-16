@@ -49,7 +49,7 @@ export default function Launcher({ banners }) {
   const [launchList, setLaunchList] = useState(<></>)
   const [tokenToSendToPresale, setTokenToSendToPresale] = useState(0.0)
 
-  const tokenLauncherContract = useTokenLauncherContract('0x4E3016da4e642233C332710ADBa169A92E096Fad')
+  const tokenLauncherContract = useTokenLauncherContract('0x2C4E72eEc81F9a26c6D17FA61822A03308FFa69A')
   const tokenFactoryContract = useERC20TokenFactoryContract('0xaeFAcfec21258446C63E0571782D8291c5244175')
   const wNearToken = useTokenContract('0x4861825E75ab14553E5aF711EbbE6873d369d146')
   const tokenContract = useTokenContract(tokenAddress)
@@ -59,15 +59,13 @@ export default function Launcher({ banners }) {
   }, [tokenToSendToPresale])
 
   const fundTokenCampaign = () => {
+    console.log('tokenToSendToPresale ', tokenToSendToPresale)
     wNearToken.approve(tokenLauncherContract.address, ethers.constants.MaxUint256.toString()).then((response) => {
-      console.log('response')
-      console.log(response)
-
-      tokenLauncherContract
-        .fundTokenLaunchCampaign(launchName, BigNumber.from(tokenToSendToPresale * 10 ** 9))
-        .then((res) => {
-          console.log(res)
-        })
+      /*  console.log(response)
+      tokenToSendToPresale * 100 */
+      tokenLauncherContract.fundTokenLaunchCampaign(launchName, BigNumber.from(1)).then((res) => {
+        console.log(res)
+      })
     })
   }
 
@@ -90,7 +88,7 @@ export default function Launcher({ banners }) {
             </dl>
             <dl>
               <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt className="text-sm font-medium text-gray-500">Early User expiring Day: </dt>
+                <dt className="text-sm font-medium text-gray-500">Joining period: </dt>
                 <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                   {new Date(res._expiringDay * 1000).toString()}
                 </dd>
@@ -98,17 +96,17 @@ export default function Launcher({ banners }) {
             </dl>
             <dl>
               <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt className="text-sm font-medium text-gray-500">Early User % </dt>
+                <dt className="text-sm font-medium text-gray-500">Token Destinated to early adopter </dt>
                 <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                  {parseFloat(ethers.utils.formatEther(res._quantityEarlyUsersPool)) / 100}%
+                  {parseFloat(ethers.utils.formatEther(res._quantityEarlyUsersPool))}
                 </dd>
               </div>
             </dl>
             <dl>
               <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt className="text-sm font-medium text-gray-500">Liquidity Pool %</dt>
+                <dt className="text-sm font-medium text-gray-500">Token destinated to liquidity pool</dt>
                 <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                  {parseFloat(ethers.utils.formatEther(res._quantityLiquidityPool)) / 100}%
+                  {parseFloat(ethers.utils.formatEther(res._quantityLiquidityPool))}
                 </dd>
               </div>
             </dl>
@@ -258,7 +256,7 @@ export default function Launcher({ banners }) {
                             className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4 primary"
                             htmlFor="token-symbol"
                           >
-                            Liquidity Destinated to Early Adopter
+                            Token Destinated to Early Adopter
                           </label>
                         </div>
                         <div className="md:w-2/3">

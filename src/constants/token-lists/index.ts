@@ -23,6 +23,7 @@ const SET_LIST = 'https://raw.githubusercontent.com/SetProtocol/uniswap-tokenlis
 const UMA_LIST = 'https://umaproject.org/uma.tokenlist.json'
 const WRAPPED_LIST = 'wrapped.tokensoft.eth'
 const DHEDGE_LIST = 'https://list.dhedge.eth.link/' */
+
 const AURORA_TOKEN_LIST =
   'https://raw.githubusercontent.com/Doc-Failure/aurora-testnet-tokenlist/main/aurora_tokens.json'
 
