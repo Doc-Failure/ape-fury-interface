@@ -81,6 +81,7 @@ function combineMaps(map1: TokenAddressMap, map2: TokenAddressMap): TokenAddress
     122: { ...map1[122], ...map2[122] }, // fuse
     40: { ...map1[40], ...map2[40] }, // telos
     1313161555: { ...map1[1313161555], ...map2[1313161555] }, // aurora testnet
+    365: { ...map1[365], ...map2[365] }, // aurora testnet
   }
 }
 
@@ -148,7 +149,7 @@ export function useIsListActive(url: string): boolean {
 
 async function getAddressFromSmartContract() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const tokenFactoryContract = useERC20TokenFactoryContract('0xaeFAcfec21258446C63E0571782D8291c5244175')
+  const tokenFactoryContract = useERC20TokenFactoryContract('0xd7BbA6bf573AEf09ce57EEfE87c9e1f8e6b13745')
   return await tokenFactoryContract.getD().getContracts()
 }
 /* 

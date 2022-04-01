@@ -224,6 +224,19 @@ const builders = {
         return `${prefix}/${type}/${data}`
     }
   },
+  theta: (chainName: string, data: string, type: 'transaction' | 'token' | 'address' | 'block') => {
+    const prefix = 'https://explorer.thetatoken.org/'
+    switch (type) {
+      case 'transaction':
+        return `${prefix}/tx/${data}`
+      case 'token':
+        return `${prefix}/address/${data}`
+      case 'address':
+        return `${prefix}/address/${data}`
+      default:
+        return `${prefix}/${type}/${data}`
+    }
+  },
 }
 
 interface ChainObject {
@@ -349,6 +362,10 @@ const chains: ChainObject = {
   [ChainId.AURORA_TESTNET]: {
     chainName: 'Aurora Testnet',
     builder: builders.aurora,
+  },
+  [ChainId.THETA_TESTNET]: {
+    chainName: 'Theta Testnet',
+    builder: builders.theta,
   },
 }
 

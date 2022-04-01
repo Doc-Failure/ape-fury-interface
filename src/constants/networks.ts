@@ -24,6 +24,7 @@ const Telos =
   'https://raw.githubusercontent.com/sushiswap/logos/main/network/telos/0xD102cE6A4dB07D247fcc28F366A623Df0938CA9E.jpg'
 const Aurora =
   'https://raw.githubusercontent.com/aurora-is-near/design-assets/main/token-logo/aurora-avatar-grn%202.png'
+const Theta = 'https://raw.githubusercontent.com/thetatoken/theta-wallet-web/master/public/img/tokens/theta.png'
 
 export const NETWORK_ICON = {
   [ChainId.MAINNET]: Mainnet,
@@ -55,6 +56,7 @@ export const NETWORK_ICON = {
   [ChainId.FUSE]: Fuse,
   [ChainId.TELOS]: Telos,
   [ChainId.AURORA_TESTNET]: Aurora,
+  [ChainId.THETA_TESTNET]: Theta,
 }
 
 export const NETWORK_LABEL: { [chainId in ChainId]?: string } = {
@@ -87,4 +89,5 @@ export const NETWORK_LABEL: { [chainId in ChainId]?: string } = {
   [ChainId.FUSE]: 'Fuse',
   [ChainId.TELOS]: 'Telos EVM',
   [ChainId.AURORA_TESTNET]: 'Aurora Testnet EVM',
+  [ChainId.THETA_TESTNET]: 'Theta Testnet',
 }

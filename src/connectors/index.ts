@@ -89,6 +89,7 @@ export const injected = new InjectedConnector({
     122, // fuse
     40, // telos
     1313161555, // Aurora testnet
+    365, // Aurora testnet
   ],
 })
 

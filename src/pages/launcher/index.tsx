@@ -49,8 +49,8 @@ export default function Launcher({ banners }) {
   const [launchList, setLaunchList] = useState(<></>)
   const [tokenToSendToPresale, setTokenToSendToPresale] = useState(0.0)
 
-  const tokenLauncherContract = useTokenLauncherContract('0x2C4E72eEc81F9a26c6D17FA61822A03308FFa69A')
-  const tokenFactoryContract = useERC20TokenFactoryContract('0xaeFAcfec21258446C63E0571782D8291c5244175')
+  const tokenLauncherContract = useTokenLauncherContract('0x4C800f86D31EC5879a8e624e90F190D64869DB95')
+  const tokenFactoryContract = useERC20TokenFactoryContract('0xd7BbA6bf573AEf09ce57EEfE87c9e1f8e6b13745')
   const wNearToken = useTokenContract('0x4861825E75ab14553E5aF711EbbE6873d369d146')
   const tokenContract = useTokenContract(tokenAddress)
 

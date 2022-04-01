@@ -76,7 +76,7 @@ export default function Factory({ banners }) {
       })
   }
 
-  const tokenFactoryContract = useERC20TokenFactoryContract('0xaeFAcfec21258446C63E0571782D8291c5244175')
+  const tokenFactoryContract = useERC20TokenFactoryContract('0xd7BbA6bf573AEf09ce57EEfE87c9e1f8e6b13745')
   const { i18n } = useLingui()
 
   const loadedUrlParams = useDefaultsFromURLSearch()

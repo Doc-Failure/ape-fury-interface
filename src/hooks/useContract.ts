@@ -107,7 +107,12 @@ export function useTokenLauncherContract(tokenAddress?: string, withSignerIfPoss
 }
 export function useWETH9Contract(withSignerIfPossible?: boolean): Contract | null {
   const { chainId } = useActiveWeb3React()
-  return useContract(chainId ? WNATIVE[chainId].address : undefined, WETH9_ABI, withSignerIfPossible)
+  return useContract('0xE1410626b8f03DBA4bC33969D0965e255640b51d', WETH9_ABI, withSignerIfPossible)
+  /*  if(chainId==365){
+    return useContract("0xE1410626b8f03DBA4bC33969D0965e255640b51d", WETH9_ABI, withSignerIfPossible)
+  }else{
+    return useContract(chainId ? WNATIVE[chainId].address : undefined, WETH9_ABI, withSignerIfPossible)
+  } */
 }
 
 export function useArgentWalletDetectorContract(): Contract | null {

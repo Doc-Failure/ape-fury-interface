@@ -23,16 +23,16 @@ export const SUPPORTED_NETWORKS: {
     blockExplorerUrls: string[]
   }
 } = {
-  [ChainId.AURORA_TESTNET]: {
-    chainId: '0x28',
-    chainName: 'Aurora Testnet',
+  [ChainId.THETA_TESTNET]: {
+    chainId: '365',
+    chainName: 'Theta Testnet',
     nativeCurrency: {
-      name: 'Aurora',
-      symbol: 'AURORA',
+      name: 'Theta',
+      symbol: 'THETA',
       decimals: 18,
     },
-    rpcUrls: ['https://testnet.aurora.dev/'],
-    blockExplorerUrls: ['https://explorer.testnet.aurora.dev/'],
+    rpcUrls: ['https://eth-rpc-api.thetatoken.org/rpc'],
+    blockExplorerUrls: ['https://explorer.thetatoken.org/'],
   },
   /* 
   [ChainId.MAINNET]: {
@@ -223,7 +223,7 @@ export default function NetworkModal(): JSX.Element | null {
       </div>
 
       <div className="grid grid-flow-row-dense grid-cols-1 gap-5 overflow-y-auto md:grid-cols-2">
-        {[ChainId.AURORA_TESTNET].map((key: ChainId, i: number) => {
+        {[ChainId.THETA_TESTNET].map((key: ChainId, i: number) => {
           if (chainId === key) {
             return (
               <button key={i} className="w-full col-span-1 p-px rounded bg-gradient-to-r from-blue to-pink">
