@@ -131,10 +131,10 @@ const useLimitOrders = () => {
           ? order.filledAmount.mul(BigNumber.from('100')).div(BigNumber.from(order.amountIn)).toString()
           : '0',
         status: order.status,
-        rate: new Percent(limitOrder.amountOut.quotient, denominator(tokenOut.decimals))
+        /*  rate: new Percent(limitOrder.amountOut.quotient, denominator(tokenOut.decimals))
           .divide(new Percent(limitOrder.amountIn.quotient, denominator(tokenIn.decimals)))
           .divide(denominator(2))
-          .toSignificant(6),
+          .toSignificant(6), */
       }
 
       return openOrder as OpenOrder

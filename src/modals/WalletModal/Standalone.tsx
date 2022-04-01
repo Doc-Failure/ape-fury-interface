@@ -177,9 +177,9 @@ export default function WalletStandalone({
     setWalletView(WALLET_VIEWS.PENDING)
 
     // if the connector is walletconnect and the user has already tried to connect, manually reset the connector
-    if (conn instanceof WalletConnectConnector && conn.walletConnectProvider?.wc?.uri) {
+    /*   if (conn instanceof WalletConnectConnector && conn.walletConnectProvider?.wc?.uri) {
       conn.walletConnectProvider = undefined
-    }
+    } */
 
     conn &&
       activate(conn, undefined, true).catch((error) => {
