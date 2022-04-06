@@ -133,10 +133,10 @@ export default function Meowshi() {
   return (
     <Container id="meowshi-page" className="py-4 md:py-8 lg:py-12" maxWidth="2xl">
       <Head>
-        <title>Meowshi | Ape Fury</title>
-        <meta key="description" name="description" content="Ape Fury Meowshi..." />
-        <meta key="twitter:description" name="twitter:description" content="Ape Fury Meowshi..." />
-        <meta key="og:description" property="og:description" content="Ape Fury Meowshi..." />
+        <title>Meowshi | Theta-Launcher</title>
+        <meta key="description" name="description" content="Theta-Launcher Meowshi..." />
+        <meta key="twitter:description" name="twitter:description" content="Theta-Launcher Meowshi..." />
+        <meta key="og:description" property="og:description" content="Theta-Launcher Meowshi..." />
       </Head>
 
       <div className="z-0 relative mb-[-38px] md:mb-[-54px] ml-0 md:ml-4 flex justify-between gap-6 items-center">

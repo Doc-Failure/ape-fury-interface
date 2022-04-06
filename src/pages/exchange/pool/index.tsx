@@ -92,17 +92,17 @@ export default function Pool() {
         <meta
           key="description"
           name="description"
-          content="Ape Fury liquidity pools are markets for trades between the two tokens, you can provide these tokens and become a liquidity provider to earn 0.25% of fees from trades."
+          content="Theta-Launcher liquidity pools are markets for trades between the two tokens, you can provide these tokens and become a liquidity provider to earn 0.25% of fees from trades."
         />
         <meta
           key="twitter:description"
           name="twitter:description"
-          content="Ape Fury liquidity pools are markets for trades between the two tokens, you can provide these tokens and become a liquidity provider to earn 0.25% of fees from trades."
+          content="Theta-Launcher liquidity pools are markets for trades between the two tokens, you can provide these tokens and become a liquidity provider to earn 0.25% of fees from trades."
         />
         <meta
           key="og:description"
           property="og:description"
-          content="Ape Fury liquidity pools are markets for trades between the two tokens, you can provide these tokens and become a liquidity provider to earn 0.25% of fees from trades."
+          content="Theta-Launcher liquidity pools are markets for trades between the two tokens, you can provide these tokens and become a liquidity provider to earn 0.25% of fees from trades."
         />
       </Head>
 

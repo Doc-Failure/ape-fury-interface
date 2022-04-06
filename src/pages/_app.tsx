@@ -122,7 +122,7 @@ function MyApp({
           name="viewport"
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
         />
-        <title key="title">Ape Fury</title>
+        <title key="title">Theta-Launcher</title>
 
         <meta
           key="description"
@@ -130,7 +130,7 @@ function MyApp({
           content="Be a DeFi Chef with Sushi. Swap, earn, stack yields, lend, borrow, leverage all on one decentralized, community driven platform. Welcome home to DeFi"
         />
 
-        <meta name="application-name" content="Ape Fury App" />
+        <meta name="application-name" content="Theta-Launcher App" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="SUSHI App" />
@@ -152,7 +152,7 @@ function MyApp({
         <meta key="twitter:image" name="twitter:image" content="https://app.sushi.com/icons/icon-192x192.png" />
         <meta key="twitter:creator" name="twitter:creator" content="@SushiSwap" />
         <meta key="og:type" property="og:type" content="website" />
-        <meta key="og:site_name" property="og:site_name" content="Ape Fury" />
+        <meta key="og:site_name" property="og:site_name" content="Theta-Launcher" />
         <meta key="og:url" property="og:url" content="https://app.sushi.com" />
         <meta key="og:image" property="og:image" content="https://app.sushi.com/apple-touch-icon.png" />
         <meta

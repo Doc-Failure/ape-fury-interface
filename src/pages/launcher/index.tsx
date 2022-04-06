@@ -209,7 +209,7 @@ export default function Launcher({ banners }) {
     <Container id="factory-token" className="py-4 md:py-8 lg:py-12">
       <Head>
         {/* TODO: Insert some proper Meta */}
-        <title>Ape Fury</title>
+        <title>Theta-Launcher</title>
         {/* <meta
           key="description"
           name="description"

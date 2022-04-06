@@ -4,10 +4,10 @@ export default function Settings() {
   return (
     <Container id="settings-page" className="py-4 space-y-3 md:py-8 lg:py-12" maxWidth="2xl">
       <Head>
-        <title>Settings | Ape Fury</title>
-        <meta name="description" content="Ape Fury Settings..." />
-        <meta key="twitter:description" name="twitter:description" content="Ape Fury Settings..." />
-        <meta key="og:description" property="og:description" content="Ape Fury Settings..." />
+        <title>Settings | Theta-Launcher</title>
+        <meta name="description" content="Theta-Launcher Settings..." />
+        <meta key="twitter:description" name="twitter:description" content="Theta-Launcher Settings..." />
+        <meta key="og:description" property="og:description" content="Theta-Launcher Settings..." />
       </Head>
     </Container>
   )

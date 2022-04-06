@@ -470,21 +470,21 @@ export default function Swap({ banners }) {
   return (
     <Container id="swap-page" className="py-4 md:py-8 lg:py-12">
       <Head>
-        <title>Ape Fury</title>
+        <title>Theta-Launcher</title>
         <meta
           key="description"
           name="description"
-          content="Ape Fury allows for swapping of ERC20 compatible tokens across multiple networks"
+          content="Theta-Launcher allows for swapping of ERC20 compatible tokens across multiple networks"
         />
         <meta
           key="twitter:description"
           name="twitter:description"
-          content="Ape Fury allows for swapping of ERC20 compatible tokens across multiple networks"
+          content="Theta-Launcher allows for swapping of ERC20 compatible tokens across multiple networks"
         />
         <meta
           key="og:description"
           property="og:description"
-          content="Ape Fury allows for swapping of ERC20 compatible tokens across multiple networks"
+          content="Theta-Launcher allows for swapping of ERC20 compatible tokens across multiple networks"
         />
       </Head>
       <TokenWarningModal

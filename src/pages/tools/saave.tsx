@@ -6,10 +6,10 @@ export default function Saave() {
   return (
     <Container id="saave-page" className="py-4 md:py-8 lg:py-12" maxWidth="2xl">
       <Head>
-        <title>Saave | Ape Fury</title>
-        <meta key="description" name="description" content="Ape Fury Saave..." />
-        <meta key="twitter:description" name="twitter:description" content="Ape Fury Saave..." />
-        <meta key="og:description" property="og:description" content="Ape Fury Saave..." />
+        <title>Saave | Theta-Launcher</title>
+        <meta key="description" name="description" content="Theta-Launcher Saave..." />
+        <meta key="twitter:description" name="twitter:description" content="Theta-Launcher Saave..." />
+        <meta key="og:description" property="og:description" content="Theta-Launcher Saave..." />
       </Head>
 
       <Container className="text-center">

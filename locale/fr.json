@@ -365,7 +365,7 @@
   "Your transaction will revert if the price changes unfavorably by more than this percentage.": "Votre transaction sera annulée si la variation de prix défavorable excède ce pourcentage.",
   "Your transaction will revert if there is a large, unfavorable price movement before it is confirmed.": "Votre transaction sera annulée en cas de mouvement de prix important et défavorable avant qu'elle ne soit confirmée.",
   "Your transactions will appear here...": "Vos transactions apparaitront ici...",
-  "Your {exchange} {0}/{1} liquidity will become Ape Fury {2}/{3} liquidity.": "",
+  "Your {exchange} {0}/{1} liquidity will become Theta-Launcher {2}/{3} liquidity.": "",
   "Zap": "Zap",
   "failed to load": "échec du chargement",
   "for deliberations on additional points.": "en vue de délibérations sur des points supplémentaires.",

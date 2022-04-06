@@ -365,7 +365,7 @@
   "Your transaction will revert if the price changes unfavorably by more than this percentage.": "가격이 해당 퍼센티지 이상으로 불리하게 변경되면 거래가 취소됩니다.",
   "Your transaction will revert if there is a large, unfavorable price movement before it is confirmed.": "거래가 확인되기 전에 크게 불리한 가격 변동이 있는 경우 거래가 취소됩니다.",
   "Your transactions will appear here...": "거래가 여기에 표시됩니다.",
-  "Your {exchange} {0}/{1} liquidity will become Ape Fury {2}/{3} liquidity.": "",
+  "Your {exchange} {0}/{1} liquidity will become Theta-Launcher {2}/{3} liquidity.": "",
   "Zap": "교체",
   "failed to load": "로드하지 못함",
   "for deliberations on additional points.": "추가 포인트에 대한 심의",

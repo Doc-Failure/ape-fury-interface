@@ -273,17 +273,17 @@ export default function Zap() {
         <meta
           key="description"
           name="description"
-          content="Ape Fury allows for swapping of ERC20 compatible tokens across multiple networks"
+          content="Theta-Launcher allows for swapping of ERC20 compatible tokens across multiple networks"
         />
         <meta
           key="twitter:description"
           name="twitter:description"
-          content="Ape Fury allows for swapping of ERC20 compatible tokens across multiple networks"
+          content="Theta-Launcher allows for swapping of ERC20 compatible tokens across multiple networks"
         />
         <meta
           key="og:description"
           property="og:description"
-          content="Ape Fury allows for swapping of ERC20 compatible tokens across multiple networks"
+          content="Theta-Launcher allows for swapping of ERC20 compatible tokens across multiple networks"
         />
       </Head>
       {!poolAddress ? (

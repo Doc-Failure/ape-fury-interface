@@ -365,7 +365,7 @@
   "Your transaction will revert if the price changes unfavorably by more than this percentage.": "如果價格變化的不利程度超過此百分比，您的交易將被恢復 。",
   "Your transaction will revert if there is a large, unfavorable price movement before it is confirmed.": "如果交易在確認之前出現大的不利價格變動，則交易將恢復。",
   "Your transactions will appear here...": "您的交易將顯示在此...",
-  "Your {exchange} {0}/{1} liquidity will become Ape Fury {2}/{3} liquidity.": "",
+  "Your {exchange} {0}/{1} liquidity will become Theta-Launcher {2}/{3} liquidity.": "",
   "Zap": "Zap",
   "failed to load": "加載失敗",
   "for deliberations on additional points.": "對其他要點的討論。",

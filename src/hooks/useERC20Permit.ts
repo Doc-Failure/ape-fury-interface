@@ -268,7 +268,7 @@ export function useERC20Permit(
 
 const REMOVE_V2_LIQUIDITY_PERMIT_INFO: PermitInfo = {
   version: '1',
-  name: 'Ape Fury LP Token',
+  name: 'Theta-Launcher LP Token',
   type: PermitType.AMOUNT,
 }
 
